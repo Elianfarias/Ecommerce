@@ -13,3 +13,6 @@ $(".filter").click(function () {
     }
     
    })
+   $(function () {
+     console.log("asdas")
+   });
