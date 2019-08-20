@@ -1,13 +1,24 @@
 
   <header>
     <!-- En el nav Está el logo moonlight y el menú -->
-    <nav id="nav" class="nav1">
-      <div class="contenedor-nav">
+    <nav class="navbar-light" id="nav">
+      <div class="contenedor-nav" id="open">
         <div class="logo">
-          <a href=""> <img src="img/moonlight.png" alt=""/></a>
+          <a href="index.php"> <img src="img/moonlight.png" alt=""/></a><!--cambiar por un icono de volver hacia atras-->
         </div>
+        <div class="enlaces">
+        <div class="row ml-3 ">
+  <div class="col-lg-10">
+    <input type="text" class="form-control" id="busqueda" placeholder="Ingrese su busqueda..">
+  </div>
+  <div class="col-lg-2">
+  <button class="btn btn-outline-dark my-sm-0" id="buscar" type="submit">Buscar</button>
+  </div>
+  </div>
+ 
+  </div>
         <div class="enlaces" id="enlaces">
-         
+        
           <!-- <a href="#" id="enlaces-inicio" class="btn-header">Inicio</a> -->
           <a href="catalogo.php" id="enlaces-libros" class="btn-header ">Libros</a>
 

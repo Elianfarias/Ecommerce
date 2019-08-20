@@ -3,16 +3,6 @@ var menu = document.getElementById("enlaces");
 var btn_menu = document.getElementById("open");
 var btn_enlaces = document.getElementsByClassName("btn-header");
 var cerrado = true;
-btn_menu.onclick = function (event) {
-  if (cerrado) {
-    menu.style.width = "100%";
-    cerrado = false;
-  } else {
-    menu.style.width = "0";
-    cerrado = true;
-  }
-
-};
 window.onscroll = function () {
   var scrolltop = window.scrollY;
   if (scrolltop <= 450) {
