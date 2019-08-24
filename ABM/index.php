@@ -71,7 +71,10 @@
                                 </button>
                             </div>
                             <div class="modal-body">
-                                <?php include("insertar.php"); ?>
+                                <div class="row">
+                                <div class="col-lg-8 mx-auto"> <?php include("insertar.php"); ?></div>
+                            </div>
+                                
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
