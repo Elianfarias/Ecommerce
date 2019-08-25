@@ -7,9 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Moonlight</title>
-    <link rel="stylesheet" href="css/header2.css" />
-    <link rel="stylesheet" href="css/main.css" />
-    <link rel="stylesheet" href="css/footer.css" />
+    <link rel="stylesheet" href="../css/header.css" />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/footer.css" />
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
@@ -28,8 +28,8 @@
   </head>
   
 <?php
-include("header.html");
-include("main.html");
-include("footer.html");
+include("../header.html");
+include("../main.html");
+include("../footer.html");
 ?>
 </html>
