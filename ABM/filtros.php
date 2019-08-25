@@ -9,7 +9,9 @@
 	
 if (isset($_GET['buscar'])) {
 		$buscar=$_GET['buscar'];
-		$sql="SELECT * FROM libro WHERE nombre LIKE'%$buscar%' OR genero LIKE '%$buscar%' ORDER BY nombre ASC";
+		$sql="SELECT * FROM libro WHERE nombre LIKE'%$buscar%' OR genero LIKE '%$buscar%' OR subgenero LIKE '%$buscar%'
+			OR editorial LIKE '%$buscar%' OR ISBN LIKE '%$buscar%'
+		ORDER BY nombre ASC";
 	}	
 
 ?>

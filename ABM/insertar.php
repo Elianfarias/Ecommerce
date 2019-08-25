@@ -19,34 +19,34 @@
 	</div>
 	<br>
 	<label>Editorial</label>
-	<input type="text" name="editorial">
+	<input type="text" name="editorial" class="inp-insert">
 	<br>
 
 	<label>ISBN</label>
-	<input type="number" name="isbn">
+	<input type="number" name="isbn" class="inp-insert">
 	<br>
 
 	<label>Subgenero</label>
-	<input type="text" name="subgenero">
+	<input type="text" name="subgenero" class="inp-insert">
 	<br>
 
 	<label>Fecha</label>
-	<input type="date" name="publicacion">
+	<input type="date" name="publicacion" class="inp-insert">
 	<br>
 
 	<label>Stock</label>
-	<input type="number" name="stock">
+	<input type="number" name="stock" class="inp-insert">
 	<br>
 
 	<label>Descripcion</label>
-	<input type="text" name="descripcion">
+	<input type="text" name="descripcion" class="inp-insert">
 	<br>
 
 	<label>Precio</label>
-	<input type="number" name="precio">
+	<input type="number" name="precio" class="inp-insert">
 	<br>
 
-	<input type="submit" name="insertar" value="Insertar" class="">
+	<input type="submit" name="insertar" value="Insertar" class="btn-insertar">
 </form>
 
 <?php 
@@ -64,7 +64,7 @@ include("redimensionarImagen.php");
 		$precio=$_REQUEST['precio'];
 
 		if (is_uploaded_file($_FILES['foto']['tmp_name'])) {
-			$nbr_foto=$_FILES['foto']['tmp_name'];
+			$nbr_foto=$_FILES['foto']['name'];
 			move_uploaded_file($_FILES['foto']['tmp_name'],$nbr_foto);
 		/*Llamo a la función redimensionar, envío nombre de la imagen y ancho final*/
 			$nombre_imagen=redimensionarImagen($nbr_foto, 500, 500);

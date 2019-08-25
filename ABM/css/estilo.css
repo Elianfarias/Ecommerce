@@ -39,5 +39,10 @@ summary img{
 
 .titulo{
     text-align: center;
-    margin: 30px;
+	margin: 30px;
+}
+
+.icons {
+	margin-left:92%;
+	display: inline;
 }

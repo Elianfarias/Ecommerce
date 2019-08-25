@@ -61,21 +61,11 @@
 		 ?></p>
 
 
-
-
-
-
-	<p class="penciltrash">
-		<a href="index.php?id_editar=<?php echo $registro['id'];?>">E<span class="lnr lnr-pencil">
-			
-		</span></a>
+	<div class="icons">
+		<a href="index.php?id_editar=<?php echo $registro['id'];?>"><img src="img/editar.png" width="18"></a>
 		<a href="index.php?id_borrar=<?php echo $registro['id'];?>" onclick="return confirm('¿Realmente desea borrar el libro?')">
-		B<span class="lnr lnr-trash">
-		
-
-		
-		</span></a>
-	</p>
+		<img src="img/basura.png" width="15"></a>
+	</div>	
 </details></div>
 <?php 
 }
