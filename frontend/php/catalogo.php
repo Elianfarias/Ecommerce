@@ -71,32 +71,46 @@
     <!-- Fuera del nav pero en el header va a estar una presentacion a la pagina solo con texto -->  
   </header>
   <div class="mt-5"></div>
-  <div class="container">
-  <div class="row">
-  <div class="col-12">
-    <div class="list-group list-group-horizontal text-center" id="list-tab" role="tablist">
-    <a class="list-group-item list-group-item-action-active h5 " id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Todo</a>      
-      <a class="list-group-item list-group-item-action h5" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Genero</a>
-      <a class="list-group-item list-group-item-action h5" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Autor</a>
-      <a class="list-group-item list-group-item-action h5" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">Editorial</a>
-    </div>
-  </div>
-  <div class="col-12">
-    <div class="tab-content" id="nav-tabContent">
-      <div class="tab-pane fade show " id="list-home" role="tabpanel" aria-labelledby="list-home-list">
-        <a class="list-group-item list-group-item-action " id="list-home-list" data-toggle="collapse" href="#" role="tab" aria-controls="home">Genero</a>
-        <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="collapse" href="#list-profile" role="tab" aria-controls="profile">Autor</a>
-        <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="collapse" href="#list-messages" role="tab" aria-controls="messages">Editorial</a>
-
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="btn-group mx-auto" role="group" aria-label="Button group with nested dropdown">
+            <button type="button" class="btn btn-secondary">Todos</button>
+            <div class="btn-group" role="group">
+              <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" 
+              aria-haspopup="true" aria-expanded="false">Biografia</button>
+              <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                <a class="dropdown-item" href="#">Autobiografia</a>
+                <a class="dropdown-item" href="#">Diario Personal</a>
+              </div>
+            </div>
+            <button type="button" class="btn btn-secondary">Politica</button>
+            <div class="btn-group" role="group">
+              <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" 
+              aria-haspopup="true" aria-expanded="false">Novela</button>
+              <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                <a class="dropdown-item" href="#">Biografia</a>
+                <a class="dropdown-item" href="#">Politica</a>
+                <a class="dropdown-item" href="#">Novela</a>
+                <a class="dropdown-item" href="#">Literatura Infantil</a>
+              </div>
+            </div>
+            <div class="btn-group" role="group">
+              <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" 
+              aria-haspopup="true" aria-expanded="false">Literatura Infantil</button>
+              <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                <a class="dropdown-item" href="#">Biografia</a>
+                <a class="dropdown-item" href="#">Politica</a>
+                <a class="dropdown-item" href="#">Novela</a>
+                <a class="dropdown-item" href="#">Literatura Infantil</a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">...</div>
-      <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">...</div>
-      <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">...</div>
     </div>
   </div>
-</div>
-</div>
   <script src="js/campeones.js"></script>
-    <script src="js/buscador.js"></script>
-  </body>
+  <script src="js/buscador.js"></script>
+</body>
 </html>
