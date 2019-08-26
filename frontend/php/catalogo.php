@@ -38,7 +38,7 @@
     <nav class="navbar navbar-light" id="id1">
       <div class="contenedor-nav">
         <div class="logo">
-          <a href="index.php"> <img src="img/moonlight.png" alt=""/></a><!--cambiar por un icono de volver hacia atras-->
+          <a href="index.php"> <img src="../img/moonlight.png" alt=""/></a><!--cambiar por un icono de volver hacia atras-->
         </div>
         <div class="enlaces">
         <div class="row ">
