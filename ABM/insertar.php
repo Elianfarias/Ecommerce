@@ -1,4 +1,4 @@
-<form action="index.php" method="post" enctype="multipart/form-data">  <!--ENCTYPE SUBIR IMAGEN -->
+<form action="index.php" method="post" enctype="multipart/form-data">
 	<img class="silueta" src="libros/estandar.jpg" width="300px" height="300px">
 	<input class="iFoto" type="file" name="foto">
 	<br>
@@ -50,7 +50,7 @@
 </form>
 
 <?php 
-include("redimensionarImagen.php");
+	include("redimensionarImagen.php");
 	if (isset($_REQUEST['insertar'])) {
 		$nombre=$_REQUEST['nombre'];
 		$escritor=$_REQUEST['escritor'];
@@ -67,9 +67,8 @@ include("redimensionarImagen.php");
 			$nbr_foto=$_FILES['foto']['name'];
 			move_uploaded_file($_FILES['foto']['tmp_name'],$nbr_foto);
 		/*Llamo a la función redimensionar, envío nombre de la imagen y ancho final*/
-			$nombre_imagen=redimensionarImagen($nbr_foto, 500, 500);
+			$nombre_imagen=redimensionarImagen($nbr_foto, 300, 500);
 			unlink($nbr_foto);
-
 		}else{
 			$nombre_imagen="estandar.jpg";
 		}

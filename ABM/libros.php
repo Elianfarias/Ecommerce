@@ -1,4 +1,4 @@
-<h1 class="titulo">
+<h2 class="titulo">Filtrar por:
 <?php 
 	if (isset($_GET['genero'])) {
 		echo $_GET['genero'];
@@ -10,7 +10,7 @@
 	echo "Todos";
 }
  ?>
-</h1>
+</h2>
 <?php 
 	$consulta=mysqli_query($conexion,$sql);
 	if(mysqli_num_rows($consulta)>0) {
@@ -19,7 +19,7 @@
 		
  ?>
 
-<div class="cajaContacto">
+<div >
 <details>
 	<summary>
 	<?php 
