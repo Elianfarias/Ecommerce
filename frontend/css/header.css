@@ -120,6 +120,12 @@ nav .enlaces a:hover {
   font-size: 30px;
   font-weight: 300;
 }
+#cajaBusqueda{
+  position:absolute;
+  width: 300px;
+  height: 300px;
+  border: solid red 2px;
+}
 
 @media screen and (max-width: 700px) {
   .nav2 {

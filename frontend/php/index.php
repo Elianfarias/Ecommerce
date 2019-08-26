@@ -28,8 +28,8 @@
   </head>
   
 <?php
-include("../header.html");
-include("../main.html");
-include("../footer.html");
+include("header.html");
+include("main.html");
+include("footer.html");
 ?>
 </html>

@@ -7,10 +7,12 @@ $(function () {
             type:"POST",
             data:("search=" + valorFinal),
             success:function (respuesta) {
-             if (valorFinal!='') {
-                console.log(respuesta);   
-            }
-        }
+         console.log(respuesta)
+            
+        },
+        fail: function(e) {
+            console.log("Error" + e);
+          }
         })
     })
 })
