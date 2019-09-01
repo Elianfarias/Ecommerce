@@ -12,10 +12,9 @@ $(function () {
                 if(search != ''){
                 var tareas = JSON.parse(respuesta);
                 tareas.forEach(tarea => {
-                $("#listaBusqueda").append( `<a href="#" class="list-group-item list-group-item-action" >${tarea.nombre}</a>`);
+                $("#listaBusqueda").html( `<a href="#" class="list-group-item list-group-item-action" >${tarea.nombre}</a>`);
                 $("#listaBusqueda").show(200);
                 });
-                console.log($("#busqueda").keyup().lenght)
                 
             }
                 else{
