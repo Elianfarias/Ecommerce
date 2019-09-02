@@ -124,31 +124,43 @@ $registro=mysqli_fetch_assoc($consulta);
 								echo '<option value="novela" selected>Novela</option>
 							<option value="biografia">Biografia</option>
 							<option value="fabula">Fabula</option>
-							<option value="politica">Politica</option>';
+							<option value="politica">Politica</option>
+							<option value="literaturaInfantil">Literatura Infantil</option>';
 								break;
 							case 'biografia':
 								echo '<option value="novela">Novela</option>
 							<option value="biografia" selected>Biografia</option>
 							<option value="fabula">Fabula</option>
-							<option value="politica">Politica</option>';
+							<option value="politica">Politica</option>
+							<option value="literaturaInfantil">Literatura Infantil</option>';
 								break;
 							case 'fabula':
 								echo '<option value="novela">Novela</option>
 							<option value="biografia">Biografia</option>
 							<option value="fabula" selected>Fabula</option>
-							<option value="politica">Politica</option>';
+							<option value="politica">Politica</option>
+							<option value="literaturaInfantil">Literatura Infantil</option>';
 								break;
 							case 'politica':
 								echo '<option value="novela">Novela</option>
 							<option value="biografia">Biografia</option>
 							<option value="fabula">Fabula</option>
-							<option value="politica" selected>Politica</option>';
+							<option value="politica" selected>Politica</option>
+							<option value="literaturaInfantil">Literatura Infantil</option>';
+								break;
+							case 'literaturaInfantil':
+								echo '<option value="novela">Novela</option>
+							<option value="biografia">Biografia</option>
+							<option value="fabula">Fabula</option>
+							<option value="politica">Politica</option>
+							<option value="literaturaInfantil" selected>Literatura Infantil</option>';
 								break;
 								default: echo '
 								<option value="novela">Novela</option>
 							<option value="biografia">Biografia</option>
 							<option value="fabula">Fabula</option>
 							<option value="politica">Politica</option>
+							<option value="literaturaInfantil">Literatura Infantil</option>
 								';
 						}
 						 ?>
@@ -184,7 +196,7 @@ $registro=mysqli_fetch_assoc($consulta);
 								</div>
 							</div>
 						</div><br>
-						<input type="submit" class="float-right" name="editar" value="Editar &#10003;"> <br>
+						<button type="submit" name="editar" class="btn btn-primary float-right">Editar &#10003;</button><br>
 					</form>
 				</div>
 			</div>

@@ -14,7 +14,6 @@
 <?php 
 	$consulta=mysqli_query($conexion,$sql);
 	if(mysqli_num_rows($consulta)>0) {
-		
 		while($registro=mysqli_fetch_assoc($consulta)) {		
 		
  ?>

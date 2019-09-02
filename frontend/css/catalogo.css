@@ -102,6 +102,14 @@ nav .enlaces a:hover {
   font-size: 30px;
   font-weight: 300;
 }
+.btn-filtros {
+  background: linear-gradient(
+      to bottom,
+      var(--color),
+      var(--color2),
+      var(--color3)
+    )
+}
 
 @media screen and (max-width: 700px) {
   .nav2 {

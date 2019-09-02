@@ -24,6 +24,7 @@
 				<option value="biografia">Biografia</option>
 				<option value="fabula">Fabula</option>
 				<option value="politica">Politica</option>
+				<option value="literaturaInfantil">Literatura Infantil</option>
 			</select>
 		</div>
 	<br>
@@ -70,8 +71,8 @@
 		</div>
 	</div>
 	<br>
+	<button type="submit" name="insertar" class="btn btn-success float-right">Añadir</button>
 
-	<input type="submit" name="insertar" class="float-right" value="Insertar">
 </form>
 
 <?php 

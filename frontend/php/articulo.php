@@ -73,28 +73,13 @@
   <div class="mt-5"></div>
   <div class="container">
     <div class="row ml-5 ">
-      <div class="col-lg-2">
-        <a href="catalogo.php?genero=todos" class="btn btn-primary col-sm-12 btn-lg mx-auto" role="button" aria-pressed="true">Todos</a>
-      </div>
-      <div class="col-lg-2">
-        <a href="catalogo.php?genero=Biografia" class="btn btn-primary col-sm-12 btn-lg mx-auto" role="button" aria-pressed="true">Biografias</a>
-      </div>
-      <div class="col-lg-2">
-        <a href="catalogo.php?genero=Politica" class="btn btn-primary col-sm-12 btn-lg mx-auto" role="button" aria-pressed="true">Politica</a>
-      </div>
-      <div class="col-lg-2">
-        <a href="catalogo.php?genero=Novela" class="btn btn-primary col-sm-12 btn-lg mx-auto" role="button" aria-pressed="true">Novela</a>
-      </div>
-      <div class="col-lg-3">
-        <a href="catalogo.php?genero=LiteraturaInfantil" class="btn btn-primary col-sm-12 btn-lg mx-auto" role="button" aria-pressed="true">Literatura Infantil</a>
-      </div>
     </div>
     <br><hr><br>
     <div class="row">
-				<?php
-          include("librosCatalogo.php");
-          include("filtrosCatalogo.php");
-				?>
+        <?php
+           include("filtrosCatalogo.php");
+           include("librosArticulo.php")
+        ?>
 		</div>
   </div>
   <script src="js/campeones.js"></script>
