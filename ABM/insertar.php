@@ -1,52 +1,77 @@
 <form action="index.php" method="post" enctype="multipart/form-data">
-	<img class="silueta" src="libros/estandar.jpg" width="300px" height="300px">
-	<input class="iFoto" type="file" name="foto">
-	<br>
-	<label>Nombre</label>
-	<input type="text" name="nombre">
-	<br>
-	<div class="insertarEscritor">
-	<label>Escritor</label>
-	<input type="text" name="escritor">
-	<br>
-	<label> Genero </label>
-		<select name="genero">
-		  <option value="novela">Novela</option>
-		  <option value="biografia">Biografia</option>
-		  <option value="fabula">Fabula</option>
-		  <option value="politica">Politica</option>
-	</select>
+	<div class="col-lg-12">
+		<div class="img-insert">
+			<img src="estandar.jpg" width="150px" height="250px">
+		</div>
+		<br>
+		<input type="file" name="foto">
 	</div>
 	<br>
-	<label>Editorial</label>
-	<input type="text" name="editorial" class="inp-insert">
+	<div class="col-lg-12">
+		<label>Nombre</label>
+		<input type="text" name="nombre" class="float-right">
+	</div>
+	<br>
+	<div class="col-lg-12">
+		<label>Escritor</label>
+		<input type="text" name="escritor" class="float-right">
+	</div>
+	<br>
+		<div class="col-lg-12">
+			<label> Genero </label>
+			<select name="genero" class="float-right">
+				<option value="novela">Novela</option>
+				<option value="biografia">Biografia</option>
+				<option value="fabula">Fabula</option>
+				<option value="politica">Politica</option>
+			</select>
+		</div>
+	<br>
+	<div class="col-lg-12">
+		<label>Editorial</label>
+		<input type="text" name="editorial" class="float-right">
+	</div>
+	<br>
+	<div class="col-lg-12">
+		<label>ISBN</label>
+		<input type="number" name="isbn" class="float-right">
+	</div>
+	<br>
+	<div class="col-lg-12">
+		<label>Subgenero</label>
+		<input type="text" name="subgenero" class="float-right">
+	</div>
+	<br>
+	<div class="col-lg-12">
+		<label>Fecha</label>
+		<input type="date" name="publicacion" class="float-right">
+	</div>
+	<br>
+	<div class="col-lg-12">
+		<label>Stock</label>
+		<input type="number" name="stock" class="float-right">
+	</div>
+	<br>
+	<div class="col-lg-12">
+		<label>Precio</label>
+		<input type="number" name="precio" class="float-right">
+	</div>
+	<br>
+	<div class="col-lg-12">
+		<div class="row">
+			<div class="col-lg-12">	
+				<label>Descripcion</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-12">
+			<textarea type="text" name="descripcion" class="inp-desc"  style="WIDTH: 100%;" rows="10" cols="50"> </textarea>
+			</div>
+		</div>
+	</div>
 	<br>
 
-	<label>ISBN</label>
-	<input type="number" name="isbn" class="inp-insert">
-	<br>
-
-	<label>Subgenero</label>
-	<input type="text" name="subgenero" class="inp-insert">
-	<br>
-
-	<label>Fecha</label>
-	<input type="date" name="publicacion" class="inp-insert">
-	<br>
-
-	<label>Stock</label>
-	<input type="number" name="stock" class="inp-insert">
-	<br>
-
-	<label>Descripcion</label>
-	<input type="text" name="descripcion" class="inp-insert">
-	<br>
-
-	<label>Precio</label>
-	<input type="number" name="precio" class="inp-insert">
-	<br>
-
-	<input type="submit" name="insertar" value="Insertar" class="btn-insertar">
+	<input type="submit" name="insertar" class="float-right" value="Insertar">
 </form>
 
 <?php 

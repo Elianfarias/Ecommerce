@@ -6,7 +6,7 @@ details{
 }
 
 details[open]{
-	background-color: lightblue;
+	background-color: LIGHTSKYBLUE;
 	color: black;
 }
 
@@ -45,3 +45,4 @@ summary img{
 	margin-left:92%;
 	display: inline;
 }
+

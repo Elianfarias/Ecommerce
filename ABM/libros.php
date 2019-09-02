@@ -19,7 +19,7 @@
 		
  ?>
 
-<div >
+<div class="">
 <details>
 	<summary>
 	<?php 
@@ -32,6 +32,7 @@
 			echo $registro['nombre'];
 		 ?>
 	</summary>
+	<hr>
 	<p class="items"><?php 
 			echo "Escritor: ".$registro['escritor'];
 		 ?></p>
@@ -62,7 +63,7 @@
 
 
 	<div class="icons">
-		<a href="index.php?id_editar=<?php echo $registro['id'];?>"><img src="img/editar.png" width="18"></a>
+		<a href="editar.php?id_editar=<?php echo $registro['id'];?>"><img src="img/editar.png" width="18"></a>
 		<a href="index.php?id_borrar=<?php echo $registro['id'];?>" onclick="return confirm('¿Realmente desea borrar el libro?')">
 		<img src="img/basura.png" width="15"></a>
 	</div>	
