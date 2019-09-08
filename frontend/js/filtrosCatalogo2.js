@@ -11,7 +11,7 @@ $(function () {
             $('#librosCatalogo').append(`<div class="col-lg-4 col-md-6 col-sm-12 catalogoUnidad contenedorCatalogo">
             <div class="shadow-lg p-3 mb-5 bg-white rounded">
             <div class="col-lg-12 text-center contenedorCatalogo">
-            <img src="../../ABM/libros/'${element.foto}'" width="187.5px" heigth="375px" >
+            <img src="../img/${element.foto}" width="187.5px" heigth="375px" alt="${element.nombre}" >
                 </div>
                 <div class="col-lg-12 contenedorCatalogo">
                     <div class="row mx-auto">
@@ -20,7 +20,7 @@ $(function () {
                         </p>
                     </div>
                     <p class="font-weight-light font-italic">${element.escritor}</p>
-                    <p class=""><button type="button" class="btn btn-link float-right"><a href="articulo.php?id=${element.id}">Ver Más</a></button></p>
+                    <p class="mb-5"><button type="button" class="btn btn-link float-right"><a href="articulo.php?id=${element.id}">Ver Más</a></button></p>
                     
                 </div>     
             </div>
@@ -42,12 +42,12 @@ $('.genero').click(function () {
         success: function(res){
            
             var respuestas = JSON.parse(res);
-            var cont = 0;
+            console.log(respuestas[0].foto)
             respuestas.forEach(element => {
             $('#librosCatalogo').append(`<div class="col-lg-4 col-md-6 col-sm-12 catalogoUnidad contenedorCatalogo">
             <div class="shadow-lg p-3 mb-5 bg-white rounded">
             <div class="col-lg-12 text-center contenedorCatalogo">
-            <img src="../../ABM/libros/'${element.foto}'" width="187.5px" heigth="375px" >
+            <img src="../img/'${element.foto}'" width="187.5px" heigth="375px" alt="${element.nombre}" >
                 </div>
                 <div class="col-lg-12 contenedorCatalogo">
                     <div class="row mx-auto">
@@ -56,7 +56,7 @@ $('.genero').click(function () {
                         </p>
                     </div>
                     <p class="font-weight-light font-italic">${element.escritor}</p>
-                    <p class=""><button type="button" class="btn btn-link float-right"><a href="articulo.php?id=${element.id}">Ver Más</a></button></p>
+                    <p class="mb-5"><button type="button" class="btn btn-link float-right"><a href="articulo.php?id=${element.id}">Ver Más</a></button></p>
                     
                 </div>     
             </div>
