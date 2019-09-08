@@ -16,7 +16,7 @@ window.onscroll = function () {
     menu.style.top = "100px";
   }
   window.addEventListener('resize', function () {
-    if (screen.width >= 700) {
+    if (screen.width >= 1100) {
       cerrado = true;
       menu.style.removeProperty('overflow');
       menu.style.removeProperty('width');

@@ -11,7 +11,7 @@ $(function () {
             $('#librosCatalogo').append(`<div class="col-lg-4 col-md-6 col-sm-12 catalogoUnidad contenedorCatalogo">
             <div class="shadow-lg p-3 mb-5 bg-white rounded">
             <div class="col-lg-12 text-center contenedorCatalogo">
-            <img src="../img/${element.foto}" width="187.5px" heigth="375px" alt="${element.nombre}" >
+            <img src="../../ABM/libros/${element.foto}" width="187.5px" heigth="375px" alt="${element.nombre}" >
                 </div>
                 <div class="col-lg-12 contenedorCatalogo">
                     <div class="row mx-auto">
@@ -47,9 +47,9 @@ $('.genero').click(function () {
             $('#librosCatalogo').append(`<div class="col-lg-4 col-md-6 col-sm-12 catalogoUnidad contenedorCatalogo">
             <div class="shadow-lg p-3 mb-5 bg-white rounded">
             <div class="col-lg-12 text-center contenedorCatalogo">
-            <img src="../img/'${element.foto}'" width="187.5px" heigth="375px" alt="${element.nombre}" >
+            <img src="../../ABM/libros/'${element.foto}'" width="187.5px" heigth="375px" alt="${element.nombre}" >
                 </div>
-                <div class="col-lg-12 contenedorCatalogo">
+                <div class="col-lg-12 col-md-6 col-sm-4 contenedorCatalogo">
                     <div class="row mx-auto">
                         <p class="font-italic">
                          ${element.nombre}

@@ -1,3 +1,10 @@
 .contenedorCatalogo{
     position: inherit !important;
   }
+  @media screen and (max-width:1000px){
+    .btn-lg{
+      position: inherit !important;
+      border-radius:5px !important;
+      margin-top:5px;
+    }
+  }

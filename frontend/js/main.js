@@ -22,7 +22,7 @@ $(function() {
         $("#recomendado-libro").append(`<div class="contenedor-recomendados">
         <!-- img producto -->
         <div class="libro">
-          <img src="../img/${tarea.foto}" alt="" />
+          <img src="../../ABM/libros/${tarea.foto}" alt="" />
         </div>
         <!-- Info producto -->
         <div class="infolibro">
@@ -46,7 +46,7 @@ $(function() {
           $("#descuento-libro").append(`<div class="contenedor-recomendados">
           <!-- img producto -->
           <div class="libro">
-            <img src="../img/${tarea.foto}" alt="" />
+            <img src="../../ABM/libros/${tarea.foto}" alt="" />
           </div>
           <!-- Info producto -->
           <div class="infolibro">
