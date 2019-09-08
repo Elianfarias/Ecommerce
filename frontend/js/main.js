@@ -22,12 +22,12 @@ $(function() {
         $("#recomendado-libro").append(`<div class="contenedor-recomendados">
         <!-- img producto -->
         <div class="libro">
-          <img src="../img/${tarea.foto}" alt="" />
+          <img src="../img/libros/${tarea.foto}" alt="" />
         </div>
         <!-- Info producto -->
         <div class="infolibro">
-          <h4>${tarea.nombre}</h4>
-          <p>${tarea.descripcion}</p>
+          <h5>${tarea.nombre}</h5>
+          <p class="h3">$${tarea.precio} <button type="button" class="btn btn-link float-right"><a href="articulo.php?id=${tarea.id}">Ver Más</a></button></p>
         </div>
       </div>`);
       });
@@ -45,14 +45,16 @@ $(function() {
           $("#descuento-libro").append(`<div class="contenedor-recomendados">
           <!-- img producto -->
           <div class="libro">
-            <img src="../img/${tarea.foto}" alt="" />
+            <img src="../img/libros/${tarea.foto}" alt="" />
           </div>
           <!-- Info producto -->
           <div class="infolibro">
-            <h4>${tarea.nombre}</h4>
-            <p>${tarea.descripcion}</p>
+            <h5>${tarea.nombre}</h5>
+            <p class="h3">$${tarea.precio} <button type="button" class="btn btn-link float-right"><a href="articulo.php?id=${tarea.id}">Ver Más</a></button></p>
+
           </div>
-        </div>`);
+        </div>
+        `);
         });
       },
       fail: function(e) {

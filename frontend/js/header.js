@@ -23,4 +23,7 @@ window.onscroll = function () {
     }
   });
 };
-
+$("#open").click(function (e) { 
+  e.preventDefault();
+  $(".enlaces").toggle().css({"width" : "100%","overflow":""});
+});
