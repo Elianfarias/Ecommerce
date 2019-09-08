@@ -41,6 +41,7 @@ $(function() {
       type: "GET",
       success: function(respuesta) {
         var tareas = JSON.parse(respuesta);
+     
         tareas.forEach(tarea => {
           $("#descuento-libro").append(`<div class="contenedor-recomendados">
           <!-- img producto -->
@@ -49,7 +50,7 @@ $(function() {
           </div>
           <!-- Info producto -->
           <div class="infolibro">
-            <h4>${tarea.nombre}</h4>
+            <h4>${tarea.escritor}</h4>
             <p>${tarea.descripcion}</p>
           </div>
         </div>`);
