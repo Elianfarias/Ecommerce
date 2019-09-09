@@ -17,13 +17,12 @@
 body {
   background: var(--fondo);
 }
+.contenedorCatalogo{
+  position: inherit !important;
+}
 /* Selecciona todas las clases con la palabra contenedor */
 .contenedor {
   margin: auto;
-  padding: var(--margenes) 0;
-  text-align: center;
-  width: 90%;
-  max-width: 1000px;
   text-align: center;
   overflow: hidden;
 }
@@ -58,18 +57,8 @@ body {
 }
 .contenedor-recomendados {
   width: 31%;
-  box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.5);
   overflow:  scroll ;
   height: 500px;
-}
-.contenedor-recomendados::-webkit-scrollbar-track:hover,
-.contenedor-recomendados::-webkit-scrollbar-track:active {
-  background: #666569;
-  transition: width 2s;
-}
-.contenedor-recomendados::-webkit-scrollbar {
-  width: 15px;     /* Tamaño del scroll en vertical */
-  height: 0px;    /* Tamaño del scroll en horizontal */
 }
 .libro{
   height: 80%;

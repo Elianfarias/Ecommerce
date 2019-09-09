@@ -4,6 +4,7 @@ $(function () {
         
         var valor = $("#busqueda").val().toLowerCase();
         let search = valor.replace(/\b\w/g, function(l){ return l.toUpperCase() })
+        $('.busquedaActiva').remove();
         $.ajax({
             url:"../php/buscador.php",
             type:"POST",
@@ -12,7 +13,7 @@ $(function () {
                 if(search != ''){
                 var tareas = JSON.parse(respuesta);
                 tareas.forEach(tarea => {
-                $("#listaBusqueda").html( `<a href="#" class="list-group-item list-group-item-action" >${tarea.nombre}</a>`);
+                $("#listaBusqueda").append( `<a href="articulo.php?id=${tarea.id}" class="list-group-item list-group-item-action busquedaActiva" >${tarea.nombre}</a>`);
                 $("#listaBusqueda").show(200);
                 });
                 

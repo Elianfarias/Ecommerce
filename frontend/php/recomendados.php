@@ -10,7 +10,8 @@ while ($registro=mysqli_fetch_assoc($consulta)){
     $json [] = array(
         'nombre' => $registro['nombre'],
         'foto' => $registro['foto'],
-        'descripcion' => $registro['descripcion']
+        'descripcion' => $registro['descripcion'],
+        'escritor' => $registro['escritor']
     );
 }
 $jsonString = json_encode($json);
