@@ -11,7 +11,9 @@ while ($registro=mysqli_fetch_assoc($consulta)){
         'nombre' => $registro['nombre'],
         'foto' => $registro['foto'],
         'descripcion' => $registro['descripcion'],
+        'precio' => $registro['precio'],
         'escritor' => $registro['escritor']
+        
     );
 }
 $jsonString = json_encode($json);

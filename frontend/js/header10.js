@@ -1,6 +1,5 @@
 var nav = document.getElementById("nav");
-var menu = document.getElementById("enlaces");
-var btn_menu = document.getElementById("open");
+var menu = document.getElementsByClassName("enlaces");
 var btn_enlaces = document.getElementsByClassName("btn-header");
 var cerrado = true;
 window.onscroll = function () {
@@ -24,3 +23,10 @@ window.onscroll = function () {
   });
 };
 
+$("#open").click(function () {
+  $(".enlaces").css({"width":"100%",
+  "overflow":"unset"});
+    $(".enlaces").toggle(1000,function () {
+  
+    });
+  });

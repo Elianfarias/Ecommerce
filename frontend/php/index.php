@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Moonlight</title>
-    <link rel="stylesheet" href="../css/header3.css" />
+    <link rel="stylesheet" href="../css/headerr.css" />
     <link rel="stylesheet" href="../css/main2.css" />
     <link rel="stylesheet" href="../css/footer.css" />
     <script src="../js/jquery.js"></script>
@@ -34,7 +34,7 @@ include("header.html");
 include("main.html");
 include("footer.html");
 ?>
-  <script src="../js/main2.js"></script>
-  <script src="../js/header.js"></script>
-  <script src="../js/buscador2.js"></script>
+  <script src="../js/main3.js"></script>
+  <script src="../js/header10.js"></script>
+  <script src="../js/buscador3.js"></script>
 </html>

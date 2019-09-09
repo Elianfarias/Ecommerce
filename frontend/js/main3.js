@@ -30,7 +30,8 @@ $(function() {
                      ${tarea.nombre}
                     </p>
                 </div>
-                <p class="font-weight-light font-italic">${tarea.escritor}  ${tarea.precio}</p>
+                <p class="font-weight-light font-italic">${tarea.escritor}</p>
+                <p class="font-weight-light font-italic">$${tarea.precio}</p>
                 <p class="mb-5"><button type="button" class="btn btn-link float-right"><a href="articulo.php?id=${tarea.id}">Ver Más</a></button></p>
                 
             </div>     
@@ -61,6 +62,7 @@ $(function() {
                       </p>
                   </div>
                   <p class="font-weight-light font-italic">${tarea.escritor}</p>
+                  <p class="font-weight-light font-italic">$${tarea.precio}</p>
                   <p class="mb-5"><button type="button" class="btn btn-link float-right"><a href="articulo.php?id=${tarea.id}">Ver Más</a></button></p>
                   
               </div>     
