@@ -1,5 +1,5 @@
 var nav = document.getElementById("nav");
-var menu = document.getElementsByClassName("enlaces");
+var menu = document.getElementById("enlaces");
 var btn_enlaces = document.getElementsByClassName("btn-header");
 var cerrado = true;
 window.onscroll = function () {
