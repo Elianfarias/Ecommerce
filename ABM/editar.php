@@ -81,7 +81,7 @@ $registro=mysqli_fetch_assoc($consulta);
   						&#10071; Por el momento, al editar un libro deberá volver a cargar su imagen... Estamos trabajando en una solución ☺
 					</div>
 				</div>
-				<div class="col-lg-4 col-sm-6 mx-auto">
+				<div class="col-lg-4 col-sm-6 mx-auto shadow-lg p-3 mb-5 bg-white rounded">
 					<form action="editar.php" method="post" enctype="multipart/form-data" >
 					  <!--ENCTYPE SUBIR IMAGEN -->
 					  <div class="img-insert col-lg-12">
@@ -196,11 +196,10 @@ $registro=mysqli_fetch_assoc($consulta);
 								</div>
 							</div>
 						</div><br>
-						<button type="submit" name="editar" class="btn btn-primary float-right">Editar &#10003;</button><br>
+						<button type="submit" name="editar" class="btn btn-info float-right">Editar &#10003;</button><br>
 					</form>
 				</div>
 			</div>
 		</div>	
 	</div>
-</div>	
-						
+</div>						

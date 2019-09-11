@@ -13,7 +13,7 @@ while ($registro=mysqli_fetch_assoc($consulta)){
         'descripcion' => $registro['descripcion'],
         'precio' => $registro['precio'],
         'escritor' => $registro['escritor']
-        
+        'id' => $registro['id']
     );
 }
 $jsonString = json_encode($json);
