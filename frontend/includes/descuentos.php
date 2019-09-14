@@ -1,5 +1,5 @@
 <?php
-include_once("includes/conexion.php");
+include_once("conexion.php");
 $sql2='SELECT *
 FROM libro
 ORDER BY precio ASC
@@ -12,7 +12,7 @@ while ($registro2=mysqli_fetch_assoc($consulta2)){
         'foto' => $registro2['foto'],
         'precio' => $registro2['precio'],
         'descripcion' => $registro2['descripcion'],
-        'escritor' => $registro2['escritor']
+        'escritor' => $registro2['escritor'],
         'id' => $registro2['id']
     );
 }

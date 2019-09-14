@@ -11,7 +11,10 @@
     <link rel="stylesheet" href="../css/headerr.css" />
     <link rel="stylesheet" href="../css/main2.css" />
     <link rel="stylesheet" href="../css/footer.css" />
-    <script src="../js/jquery.js"></script>
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
@@ -31,11 +34,11 @@
   </head>
   
 <?php
-include("includes/header.html");
-include("includes/main.html");
-include("includes/footer.html");
+include("../includes/header.html");
+include("../includes/main.html");
+include("../includes/footer.html");
 ?>
-  <script src="../js/main3.js"></script>
-  <script src="../js/header10.js"></script>
+  <script src="../js/mainn.js"></script>
+  <script src="../js/headerrr.js"></script>
   <script src="../js/buscador3.js"></script>
 </html>
