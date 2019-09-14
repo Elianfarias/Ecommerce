@@ -9,7 +9,7 @@ $(function () {
             
         $("#enlaces").css("display","none");
         $.ajax({
-            url:"../php/buscador.php",
+            url:"../includes/buscador.php",
             type:"POST",
             data:{search},
             success: function(respuesta) {

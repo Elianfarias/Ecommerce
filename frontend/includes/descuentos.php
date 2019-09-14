@@ -1,5 +1,5 @@
 <?php
-include("conexion.php");
+include_once("includes/conexion.php");
 $sql2='SELECT *
 FROM libro
 ORDER BY precio ASC

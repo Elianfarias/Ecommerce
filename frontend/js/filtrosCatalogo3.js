@@ -1,7 +1,7 @@
 $(function () {
     var data = 'todos';
         $.ajax({
-        url:'filtrosCatalogo.php',
+        url:'../includes/filtrosCatalogo.php',
         type:'POST',
         data:{data:data},
         success: function(res){
@@ -36,7 +36,7 @@ $('.genero').click(function () {
     var data = $(this).attr("data-genero");
     $('.catalogoUnidad').remove();
         $.ajax({
-        url:'filtrosCatalogo.php',
+        url:'../includes/filtrosCatalogo.php',
         type:'POST',
         data:{data:data},
         success: function(res){

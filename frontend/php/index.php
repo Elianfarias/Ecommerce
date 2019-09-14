@@ -31,9 +31,9 @@
   </head>
   
 <?php
-include("header.html");
-include("main.html");
-include("footer.html");
+include("includes/header.html");
+include("includes/main.html");
+include("includes/footer.html");
 ?>
   <script src="../js/main3.js"></script>
   <script src="../js/header10.js"></script>

@@ -1,5 +1,5 @@
 <?php 
-include("conexion.php");
+include_once("includes/conexion.php");
 	if (isset($_POST['data']) && $_POST['data'] != 'todos') {
 		$genero=$_POST['data'];
 		$sql="SELECT * FROM libro WHERE genero='".$genero."'ORDER BY nombre ASC";

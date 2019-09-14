@@ -1,4 +1,4 @@
-<?php include("conexion.php");
+<?php include_once("includes/conexion.php");
 ?>
 <html lang="en">
   <head>
@@ -41,7 +41,7 @@ include("header.html");
 		</div>
   </div>
 <?php 
-  include("footer.html");
+  include("includes/footer.html");
 ?>  
 <script src="../js/filtrosCatalogo3.js"></script>
   <script src="../js/header10.js"></script>

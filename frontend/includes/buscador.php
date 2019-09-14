@@ -1,5 +1,5 @@
 <?php
-include("conexion.php");
+include_once("includes/conexion.php");
     $search = $_POST['search'];
     if (!empty($search)) {
     $sql = "SELECT * FROM libro

@@ -1,5 +1,5 @@
 <?php
-include("conexion.php");
+include_once("includes/conexion.php");
 $sql='SELECT *
 FROM libro
 WHERE escritor="Joanne K. Rowling"

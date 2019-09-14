@@ -14,7 +14,7 @@ $(".filter").click(function() {
 });
 $(function() {
   $.ajax({
-    url: "../php/recomendados.php",
+    url: "../includes/recomendados.php",
     type: "GET",
     success: function(respuesta) {
       var tareas = JSON.parse(respuesta);
@@ -44,7 +44,7 @@ $(function() {
     }
   });
     $.ajax({
-      url: "../php/descuentos.php",
+      url: "../includes/descuentos.php",
       type: "GET",
       success: function(respuesta) {
         var tareas = JSON.parse(respuesta);

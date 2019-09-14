@@ -1,4 +1,4 @@
-<?php include("conexion.php");
+<?php include_once("includes/conexion.php");
 ?>
 <html lang="en">
   <head>
@@ -77,8 +77,8 @@
     <br><hr><br>
     <div class="row">
         <?php
-           include("filtrosCatalogo.php");
-           include("librosArticulo.php")
+           include("includes/filtrosCatalogo.php");
+           include("includes/librosArticulo.php")
         ?>
 		</div>
   </div>
