@@ -23,7 +23,7 @@
       integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="css/login.css">
 
 </head>
   <body>
@@ -33,28 +33,18 @@
 
     <!-- Icon -->
     <div class="fadeIn first">
-      <a href="index.php"><img src="../img/moonlight.png" id="icon" alt="User Icon" /></a>
+      <a href="index.php"><img src="img/moonlight.png" id="icon" alt="User Icon" /></a>
     </div>
 
     <!-- Login Form -->
-    <form action="" method="POST">
-    
-      <input type="text"  class="fadeIn second" name="login" placeholder="Nombre y Apellido*">
-      <input type="text" class="fadeIn third" name="login" placeholder="Nombre de usuario*">
-      <input type="password"  class="fadeIn third" name="login" placeholder="Contraseña*">
-      <input type="email"  class="fadeIn third" name="login" placeholder="Email*"><br>
-      <label for="" class="h5 text-primary mr-auto">Metodo de pago</label><br>
-        <select name="" class="mb-3 text-center browser-default custom-select w-75" >
-            <option value="" >Ninguna por ahora</option>
-            <option value="0" >Tarjeta de credito</option>
-            <option value="1">Tarjeta de debito</option>
-        </select><br>
-        <label class="text-secondary">* obligatorio</label><br>
-        <input type="submit" class="fadeIn fourth" value="Iniciar Sesion">
+    <form method="POST">
+      <input type="text" id="login" class="fadeIn second" name="login" placeholder="Usuario">
+      <input type="password" id="password" class="fadeIn third mb-3" name="login" placeholder="Contraseña">
+      <input type="submit" class="fadeIn fourth mb-auto" value="Iniciar Sesion">
     </form>
 
     <!-- Remind Passowrd -->
-    <div id="formFooter">
+    <div id="formFooter" class="mt-3" >
       <a class="underlineHover" href="index.php">Volver</a>
     </div>
 

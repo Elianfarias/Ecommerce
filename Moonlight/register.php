@@ -1,5 +1,6 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -23,7 +24,7 @@
       integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="css/login.css">
 
 </head>
   <body>
@@ -33,18 +34,28 @@
 
     <!-- Icon -->
     <div class="fadeIn first">
-      <a href="index.php"><img src="../img/moonlight.png" id="icon" alt="User Icon" /></a>
+      <a href="index.php"><img src="img/moonlight.png" id="icon" alt="User Icon" /></a>
     </div>
 
     <!-- Login Form -->
-    <form method="POST">
-      <input type="text" id="login" class="fadeIn second" name="login" placeholder="Usuario">
-      <input type="password" id="password" class="fadeIn third mb-3" name="login" placeholder="Contraseña">
-      <input type="submit" class="fadeIn fourth mb-auto" value="Iniciar Sesion">
+    <form action="#" method="POST">
+    
+      <input type="text"  class="fadeIn second" name="name" placeholder="Nombre y Apellido*">
+      <input type="text" class="fadeIn third" name="username" placeholder="Nombre de usuario*">
+      <input type="password"  class="fadeIn third" name="password" placeholder="Contraseña*">
+      <input type="email"  class="fadeIn third" name="email" placeholder="Email*"><br>
+      <label class="text-secondary">* obligatorio</label><br>
+      <label for="" class="h5 text-primary mr-auto">Metodo de pago</label><br>
+        <select name="credit" class="mb-3 text-center browser-default custom-select w-75" >
+            <option value="0" >Ninguna por ahora</option>
+            <option value="1" >Tarjeta de credito</option>
+            <option value="2">Tarjeta de debito</option>
+        </select><br>
+        <input type="submit" name="insertar" class="fadeIn fourth" value="Registrarse">
     </form>
 
     <!-- Remind Passowrd -->
-    <div id="formFooter" class="mt-3" >
+    <div id="formFooter">
       <a class="underlineHover" href="index.php">Volver</a>
     </div>
 
@@ -54,3 +65,18 @@
 </body>
 
 </html>
+<?php
+  require 'includes/conexion.php';
+
+  if (isset($_REQUEST['insertar'])) {
+  $name=$_POST['name'];
+  $username=$_POST['username'];
+  $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
+  $email = $_POST['email'];
+  $credit = $_POST['credit'];
+  if (!empty($_POST['email']) && !empty($_POST['password'])) {
+    $sql = "INSERT INTO usuarios (name,username,password,email,credit,type) VALUES ('$name','$username','$password','$email','$credit','usuario')";
+		$insertar=mysqli_query($conexion, $sql)? print('<script>alert("Registro Exitoso")</script>') : print('<script>alert("ERROR")</script>');    
+  }
+}
+?>

@@ -8,9 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Moonlight</title>
-    <link rel="stylesheet" href="../css/headerr.css" />
-    <link rel="stylesheet" href="../css/main2.css" />
-    <link rel="stylesheet" href="../css/footer.css" />
+    <link rel="stylesheet" href="css/headerr.css" />
+    <link rel="stylesheet" href="css/main2.css" />
+    <link rel="stylesheet" href="css/footer.css" />
     <script
   src="https://code.jquery.com/jquery-3.4.1.js"
   integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
@@ -34,11 +34,11 @@
   </head>
   
 <?php
-include("../includes/header.html");
-include("../includes/main.html");
-include("../includes/footer.html");
+include("includes/header.html");
+include("includes/main.html");
+include("includes/footer.html");
 ?>
-  <script src="../js/mainn.js"></script>
-  <script src="../js/headerrr.js"></script>
-  <script src="../js/buscador3.js"></script>
+  <script src="js/mainn.js"></script>
+  <script src="js/headerrr.js"></script>
+  <script src="js/buscador3.js"></script>
 </html>
