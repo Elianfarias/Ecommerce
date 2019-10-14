@@ -1,5 +1,5 @@
 <?php
-include_once("includes/conexion.php");
+include_once("conexion.php");
 $sql='SELECT *
 FROM libro
 WHERE escritor="Joanne K. Rowling"
@@ -12,7 +12,7 @@ while ($registro=mysqli_fetch_assoc($consulta)){
         'foto' => $registro['foto'],
         'descripcion' => $registro['descripcion'],
         'precio' => $registro['precio'],
-        'escritor' => $registro['escritor']
+        'escritor' => $registro['escritor'],
         'id' => $registro['id']
     );
 }

@@ -37,17 +37,16 @@
     </div>
 
     <!-- Login Form -->
-    <form method="POST">
+    <form action="" method="POST">
     
-      <input type="text" id="login" class="fadeIn second" name="login" placeholder="Nombre y Apellido*">
-      <input type="text" id="password" class="fadeIn third" name="login" placeholder="Nombre de usuario*">
-      <input type="password" id="password" class="fadeIn third" name="login" placeholder="Contraseña*">
-      <input type="email" id="password" class="fadeIn third" name="login" placeholder="Email*"><br>
+      <input type="text"  class="fadeIn second" name="login" placeholder="Nombre y Apellido*">
+      <input type="text" class="fadeIn third" name="login" placeholder="Nombre de usuario*">
+      <input type="password"  class="fadeIn third" name="login" placeholder="Contraseña*">
+      <input type="email"  class="fadeIn third" name="login" placeholder="Email*"><br>
       <label for="" class="h5 text-primary mr-auto">Metodo de pago</label><br>
         <select name="" class="mb-3 text-center browser-default custom-select w-75" >
-            
             <option value="" >Ninguna por ahora</option>
-        <option value="0" >Tarjeta de credito</option>
+            <option value="0" >Tarjeta de credito</option>
             <option value="1">Tarjeta de debito</option>
         </select><br>
         <label class="text-secondary">* obligatorio</label><br>

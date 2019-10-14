@@ -1,4 +1,4 @@
-<?php include_once("includes/conexion.php");
+<?php include_once("../includes/conexion.php");
 ?>
 <html lang="en">
   <head>
@@ -23,7 +23,7 @@
  </head>
   <body>
 <?php 
-include("header.html");
+include("../includes/header.html");
 ?>  
 <div class="mt-5"></div>
   <div class="container">
@@ -41,10 +41,10 @@ include("header.html");
 		</div>
   </div>
 <?php 
-  include("includes/footer.html");
+  include("../includes/footer.html");
 ?>  
 <script src="../js/filtrosCatalogo3.js"></script>
-  <script src="../js/header10.js"></script>
+  <script src="../js/headerrr.js"></script>
   <script src="../js/buscador3.js"></script>
 </body>
 </html>

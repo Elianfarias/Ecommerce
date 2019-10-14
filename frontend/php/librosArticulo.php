@@ -1,5 +1,5 @@
 <?php
-    include("includes/filtrosCatalogo.php");
+    include("../includes/filtrosCatalogo.php");
 	
 	if (isset($_GET['id'])) {		
         

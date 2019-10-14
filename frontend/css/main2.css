@@ -57,11 +57,6 @@ body {
 }
 .contenedor-recomendados {
   width: 31%;
-<<<<<<< HEAD
-  overflow:  scroll ;
-  height: 500px;
-}
-=======
   box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.5); 
   height: 500px;
 }
@@ -74,7 +69,6 @@ body {
   width: 15px;     /* Tamaño del scroll en vertical */
   height: 0px;    /* Tamaño del scroll en horizontal */
 }
->>>>>>> eb2a21330ab0caac77635c00b5e1868b29574cde
 .libro{
   height: 80%;
 }
@@ -89,10 +83,6 @@ body {
   padding: var(--espacios);
 }
 
-<<<<<<< HEAD
-=======
-
->>>>>>> eb2a21330ab0caac77635c00b5e1868b29574cde
 .botones-work li{
   border: 1px solid var(--color1);
   color: var(--color1);
