@@ -17,56 +17,59 @@
 		while($registro=mysqli_fetch_assoc($consulta)) {		
 		
  ?>
+	<details>
+		<summary>
+		<div class="row">
+			<div class="col-lg-8 col-md-8 col-sm-8">
+				<?php 
 
-<div class="">
-<details>
-	<summary>
-	<?php 
+				if (!empty($registro['foto'])){
+					echo '<img src="libros/'.$registro['foto'].'" >'; 
+				}else{
+					echo '<img src="foto.jpg">'; 
+				}
+					echo $registro['nombre'];
+				 ?>
+			</div>
+		
+			 <div class="col-lg-4 col-md-4 col-sm-4 d-inline my-auto text-right">
+				<a href="editar.php?id_editar=<?php echo $registro['id'];?>">
+				<button class="btn btn-warning text-white ">Modificar <i class="fas fa-pencil-alt"></i></button></a>
+				<a href="index.php?id_borrar=<?php echo $registro['id'];?>" onclick="return confirm('¿Realmente desea borrar el libro?')">
+				<button class="btn btn-danger text-white">Eliminar <i class="far fa-trash-alt"></i></button></a>
+			</div>
+		</div>
+		</summary>
+		<hr>
+		<p class="items"><?php 
+				echo "Escritor: ".$registro['escritor'];
+			 ?></p>
+		<p class="items"><?php 
+				echo "Editorial: ".$registro['editorial'];
+			 ?></p>
+		<p class="items"><?php 
+				echo "ISBN: ".$registro['isbn'];
+			 ?></p>
+		<p class="items"><?php 
+				echo "Genero: ".$registro['genero'];
+			 ?></p>
+		<p class="items"><?php 
+				echo "Subgenero: ".$registro['subgenero'];
+			 ?></p>	 
+		<p class="items"><?php 
+				echo "F/Public: ".$registro['publicacion'];
+			 ?></p>
+	    <p class="items"><?php 
+				echo "Stock: ".$registro['stock'];
+			 ?></p>
+		<p class="items"><?php 
+				echo "Descrip: ".$registro['descripcion'];
+			 ?></p>
+		<p class="items"><?php 
+				echo "Precio: ".$registro['precio'];
+			 ?></p>
+	</details>
 
-	if (!empty($registro['foto'])){
-		echo '<img src="libros/'.$registro['foto'].'" >'; 
-	}else{
-		echo '<img src="foto.jpg">'; 
-	}
-			echo $registro['nombre'];
-		 ?>
-	</summary>
-	<hr>
-	<p class="items"><?php 
-			echo "Escritor: ".$registro['escritor'];
-		 ?></p>
-	<p class="items"><?php 
-			echo "Editorial: ".$registro['editorial'];
-		 ?></p>
-	<p class="items"><?php 
-			echo "ISBN: ".$registro['isbn'];
-		 ?></p>
-	<p class="items"><?php 
-			echo "Genero: ".$registro['genero'];
-		 ?></p>
-	<p class="items"><?php 
-			echo "Subgenero: ".$registro['subgenero'];
-		 ?></p>	 
-	<p class="items"><?php 
-			echo "F/Public: ".$registro['publicacion'];
-		 ?></p>
-    <p class="items"><?php 
-			echo "Stock: ".$registro['stock'];
-		 ?></p>
-	<p class="items"><?php 
-			echo "Descrip: ".$registro['descripcion'];
-		 ?></p>
-	<p class="items"><?php 
-			echo "Precio: ".$registro['precio'];
-		 ?></p>
-
-
-	<div class="icons">
-		<a href="editar.php?id_editar=<?php echo $registro['id'];?>"><img src="img/editar.png" width="18"></a>
-		<a href="index.php?id_borrar=<?php echo $registro['id'];?>" onclick="return confirm('¿Realmente desea borrar el libro?')">
-		<img src="img/basura.png" width="15"></a>
-	</div>	
-</details></div>
 <?php 
 }
 	}else{
