@@ -1,0 +1,43 @@
+footer{
+  background: #343a40;
+}
+
+.marca-logo{
+  width: 50%;
+  margin: auto;
+  margin-bottom: none;
+}
+
+.marca-logo{
+  text-align: center;
+}
+
+.marca-logo img{
+  width: 150px;
+  height: 95px;
+
+}
+
+.text-footer p{
+  color: rgb(173, 172, 172);
+}
+
+.text-footer p a{
+  text-decoration: none;
+  color: WHITE;
+}
+
+.text-footer h5{
+  color:rgba(219,144,1,1)
+}
+
+.icons i{
+  padding: 3%;
+  font-size: 40px;
+}
+
+.copyright {
+  font-size: 100%;
+  margin-bottom: 0px;
+  padding-bottom: 13px;
+}

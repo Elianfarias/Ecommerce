@@ -22,7 +22,6 @@
     font-size: 20px;
     background: rgba(29, 241, 171, 0.8);
     padding:15px;
-    padding-bottom: 42px;
   }
   #buscar-libro{
     background:transparent;
@@ -173,5 +172,10 @@
       color: black;
       transition: 0.5;
     }
-
+    #enlaces-sign{
+      background: rgba(29, 241, 171, 0.8);
+      padding:15px;
+      padding-bottom: 42px;
+      }
+    }
   
