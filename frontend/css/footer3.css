@@ -1,7 +1,6 @@
 footer{
   background: #343a40;
 }
-
 .marca-logo{
   width: 50%;
   margin: auto;
@@ -20,6 +19,7 @@ footer{
 
 .text-footer p{
   color: rgb(173, 172, 172);
+  margin-bottom: 0px;
 }
 
 .text-footer p a{
