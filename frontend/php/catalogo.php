@@ -28,12 +28,12 @@ include("../includes/header.html");
 <div class="mt-5"></div>
   <div class="container">
     <div class="row" >
-      <div class="col-lg-12 col-md-6 col-sm-4 text-center contenedorCatalogo mx-auto" >
-        <a  class="btn btn-primary  btn-lg genero col-lg-2 col-md-6 col-sm-12 contenedorCatalogo" role="button"  data-genero="todos" aria-pressed="true">Todos</a>
-        <a  class="btn btn-primary btn-lg genero col-lg-2 col-md-6 col-sm-12 contenedorCatalogo" role="button" data-genero="biografia" aria-pressed="true">Biografias</a>
-        <a  class="btn btn-primary btn-lg genero col-lg-2 col-md-6 col-sm-12 contenedorCatalogo" role="button" data-genero="politica" aria-pressed="true">Politica</a>
-        <a  class="btn btn-primary  btn-lg genero col-lg-2 col-md-6 col-sm-12 contenedorCatalogo" role="button"  data-genero="novela" aria-pressed="true">Novela</a>
-        <a  class="btn btn-primary btn-lg genero col-lg-2 col-md-6 col-sm-12 contenedorCatalogo" role="button"  data-genero="literaturainfantil" aria-pressed="true">Literatura</a>
+      <div class=" col-lg-12 col-md-6 col-sm-4 text-center contenedorCatalogo mx-auto text-white" >
+        <a  class="btn btn-secondary  btn-lg genero col-lg-2 col-md-6 col-sm-12 contenedorCatalogo" role="button"  data-genero="todos" aria-pressed="true">Todos</a>
+        <a  class="btn btn-secondary btn-lg genero col-lg-2 col-md-6 col-sm-12 contenedorCatalogo" role="button" data-genero="biografia" aria-pressed="true">Biografias</a>
+        <a  class="btn btn-secondary btn-lg genero col-lg-2 col-md-6 col-sm-12 contenedorCatalogo" role="button" data-genero="politica" aria-pressed="true">Politica</a>
+        <a  class="btn btn-secondary  btn-lg genero col-lg-2 col-md-6 col-sm-12 contenedorCatalogo" role="button"  data-genero="novela" aria-pressed="true">Novela</a>
+        <a  class="btn btn-secondary btn-lg genero col-lg-2 col-md-6 col-sm-12 contenedorCatalogo" role="button"  data-genero="literaturainfantil" aria-pressed="true">Literatura</a>
       </div>
     </div>
     <br><hr><br>
