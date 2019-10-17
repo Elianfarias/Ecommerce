@@ -1,15 +1,22 @@
-
+:root {
+	--color: rgba(235, 148, 18, 0.6);
+	--color2: rgba(29, 241, 82, 0.6);
+	--color3: rgba(28, 186, 248, 0.45);
+  }
+  
+/* body{
+	background: linear-gradient(
+		to bottom,
+		var(--color),
+		var(--color2),
+		var(--color3)
+	  );
+} */
 details{
-	padding: 15px;
-	background-color: #E3E3E3;
+	padding: 1px 20px;
+	background-color: #F0F3F4;
 	margin-bottom: 10px;
 }
-
-details[open]{
-	background-color: LIGHTSKYBLUE;
-	color: black;
-}
-
 summary{
 	cursor: pointer;
 	display: flex;
@@ -32,7 +39,6 @@ summary img{
 }
 
 .insertar{
-	width: 90%;
 	padding-left: 1%;
 }
 
@@ -42,7 +48,19 @@ summary img{
 }
 
 .icons {
-	margin-left:92%;
+	margin-left:50%;
 	display: inline;
+}
+
+.inp-insert input{
+	padding: 50%;
+}
+
+.img-insert {
+	text-align: center;
+}
+
+.inp-desc input{
+	height: 50px;
 }
 

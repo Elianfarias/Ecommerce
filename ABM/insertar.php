@@ -99,7 +99,8 @@
 			$nombre_imagen="estandar.jpg";
 		}
 
-		$sql= "INSERT INTO libro (foto, nombre, escritor, editorial, isbn, genero, subgenero, publicacion, stock, descripcion, precio) VALUES ('$nombre_imagen', '$nombre', '$escritor', '$editorial', '$isbn', '$genero','$subgenero','$publicacion','$stock', '$descripcion', '$precio')";
+		$sql= "INSERT INTO libro (foto, nombre, escritor, editorial, isbn, genero, subgenero, publicacion, stock, descripcion, precio)
+		 VALUES ('$nombre_imagen', '$nombre', '$escritor', '$editorial', '$isbn', '$genero','$subgenero','$publicacion','$stock', '$descripcion', '$precio')";
 
 		$insertar=mysqli_query($conexion, $sql)? print('<script>alert("Nuevo registro")</script>') : print('<script>alert("ERROR")</script>');
 	}

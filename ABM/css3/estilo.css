@@ -3,22 +3,20 @@
 	--color2: rgba(29, 241, 82, 0.6);
 	--color3: rgba(28, 186, 248, 0.45);
   }
+  
+/* body{
+	background: linear-gradient(
+		to bottom,
+		var(--color),
+		var(--color2),
+		var(--color3)
+	  );
+} */
 details{
-	margin-left:auto;
-	margin-right: auto; 
-	max-width: 95% ;
 	padding: 1px 20px;
-	background-color: #E9E9E9;
+	background-color: #F0F3F4;
 	margin-bottom: 10px;
-	color: black;
 }
-
-details[open]{
-	background: white;
-
-	color: black;
-}
-
 summary{
 	cursor: pointer;
 	display: flex;
@@ -50,25 +48,19 @@ summary img{
 }
 
 .icons {
+	margin-left:50%;
 	display: inline;
-}
-.btn-back-editar {
-	text-decoration: none;
-	padding: 1px 8px 6px;
-	border-radius: 50%;
-	background-color: #E3E3E3; 
-	font-size: 25px;
-	color:black;
 }
 
 .inp-insert input{
 	padding: 50%;
 }
 
-.img-insert img{
-	margin-left: 33%;
+.img-insert {
+	text-align: center;
 }
 
 .inp-desc input{
 	height: 50px;
 }
+

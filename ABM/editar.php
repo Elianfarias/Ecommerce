@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
      <link  rel="icon"   href="img/logomoon.png" type="image/png">
-     <link rel="stylesheet" type="text/css" href="css2/estilo.css">
+     <link rel="stylesheet" type="text/css" href="css/estilo.css">
      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" 
      integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 
@@ -41,14 +41,14 @@ include("redimensionarImagen.php");
 		if (is_uploaded_file($_FILES['foto']['tmp_name'])) {
 			$nbr_foto=$_FILES['foto']['name'];
 			move_uploaded_file($_FILES['foto']['tmp_name'],$nbr_foto);
-		/*Llamo a la función redimensionar, envío nombre de la imagen y ancho final*/
 			$nombre_imagen=redimensionarImagen($nbr_foto, 300, 500);
-			unlink($nbr_foto);
-			unlink("libros/".$foto_previa);
-			// Cambiar fotos
-		}else{
-			$nombre_imagen=$foto_previa;
+			$eliminarFoto="libros/".$foto_previa;
+			unlink($eliminarFoto);
 		}
+		else{
+			$nombre_imagen="libros/".$foto_previa;
+		}
+		
 
 		$sql="UPDATE libro SET foto='$nombre_imagen', nombre='$nombre', escritor='$escritor', editorial= '$editorial',isbn = '$isbn', genero = '$genero', subgenero = '$subgenero', publicacion = '$publicacion', stock = '$stock', descripcion = '$descripcion', precio = '$precio'
 		WHERE id='$id_editar'";
@@ -69,19 +69,14 @@ $registro=mysqli_fetch_assoc($consulta);
 		<div class="col-lg-12 mx-auto my-auto">
 			<div class="row">
 				<div class="col-lg-1 col-sm-1 mx-auto my-auto">
-					<a href="index.php" class="btn-back-editar">&#8592;</a>
+					<a href="index.php"><i class="fas fa-arrow-circle-left" style="font-size: 40px;"></i></a>
 				</div>
 				<div class="col-lg-11 col-sm-11 my-auto ">
-					<h3 class="titulo">Editar libro: <?php echo $registro['nombre']?></h3>
+					<h1 class="titulo">Editar libro: <?php echo $registro['nombre']?></h1>
 				</div>
 			</div>
-			<div class="row">	
-				<div class="col-lg-12 col-sm-12 mx-auto">
-				<div class="alert alert-warning" role="alert">
-  						&#10071; Por el momento, al editar un libro deberá volver a cargar su imagen... Estamos trabajando en una solución ☺
-					</div>
-				</div>
-				<div class="col-lg-4 col-sm-6 mx-auto shadow-lg p-3 mb-5 bg-white rounded">
+			<div class="row">
+				<div class="col-lg-6 col-sm-6 mx-auto shadow-lg p-3 mb-5 bg-white rounded">
 					<form action="editar.php" method="post" enctype="multipart/form-data" >
 					  <!--ENCTYPE SUBIR IMAGEN -->
 					  <div class="img-insert col-lg-12">
@@ -173,7 +168,7 @@ $registro=mysqli_fetch_assoc($consulta);
 						</div>
 						<div class="col-lg-12">
 							<label>Publicacion</label>
-							<input type="text" class="float-right" name="publicacion" value="<?php echo $registro['publicacion'];?>"><br>
+							<input type="date" class="float-right" name="publicacion" value="<?php echo $registro['publicacion'];?>"><br>
 						</div>
 						<div class="col-lg-12">
 							<label>Stock</label>

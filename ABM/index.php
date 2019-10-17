@@ -13,7 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
      <link  rel="icon"   href="img/logomoon.png" type="image/png">
-     <link rel="stylesheet" type="text/css" href="css2/estilo.css">
+     <link rel="stylesheet" type="text/css" href="css/estilo.css">
      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" 
      integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 
@@ -95,7 +95,7 @@
 	</header>
 	<div class="container">
 		<div class="row">
-    		<div class="contactos col-lg-10 ml-auto mr-auto">
+    		<div class=" libros-todos col-lg-11 col-sm-11 col-md-11 mx-auto mt-5 rounded">
 				<?php
 					include("filtros.php");
 					include("libros.php");
