@@ -45,7 +45,7 @@
 <?php
 require 'includes/conexion.php';
 if (isset($_REQUEST['insertar'])) {
-  if ($_REQUEST['pass'] !== "") {
+  if (!empty($_POST['pass']) && !empty($_POST['confirmPass']) && !empty($_POST['email']) && !empty($_POST['name'])) {
   $pass = $_REQUEST['pass'];
   $confirmPass = $_REQUEST['confirmPass'];
   if ($pass == $confirmPass) {
@@ -67,6 +67,7 @@ if (isset($_REQUEST['insertar'])) {
     $insertar = mysqli_query($conexion, $sql) ? print('<script>alert("Registro Exitoso")</script>') : print('<script>alert("ERROR")</script>');
   } else {
     print('<script>alert("Error al registrase.")</script>');
+    header ('location:index.php?mesage=Error en el registro');   
   }
 }
 else {
