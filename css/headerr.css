@@ -1,0 +1,177 @@
+:root {
+    --color: rgba(211, 135, 20, 0.6);
+    --color2: rgba(29, 241, 171, 0.6);
+    --color3: rgba(7, 109, 150, 0.45);
+    --fondo: #f2f2f2;
+    --margenes: 60px;
+  }
+  #busqueda{
+    background: transparent;
+    color:black;
+    border-color: black;
+  }
+  #busqueda::placeholder{
+    color:black;
+    font-size:17px;
+  }
+  #buscar{
+    font-size:17px;
+  }
+  
+  #enlaces-sign {
+    font-size: 20px;
+    background: rgba(29, 241, 171, 0.8);
+    padding:15px;
+    padding-bottom: 42px;
+  }
+  #buscar-libro{
+    background:transparent;
+    border: 2px solid rgba(0, 0, 0, 0.5) ;
+    color:red;
+  }
+  #buscar-libro::placeholder{
+  color:black;
+  font-size:20px;
+  margin-left:auto;
+  }
+  img {
+    vertical-align: top;
+  }
+  header {
+    width: 100%;
+    height: 700px;
+    background: linear-gradient(
+        to bottom,
+        var(--color),
+        var(--color2),
+        var(--color3)
+      ),
+      url(../img/portada.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+  }
+  /* El menú cambie segun bajamos en la pagina y ponemos una caja con sombras */
+  nav {
+    width: 100%;
+    position: fixed;
+    box-shadow: 0 0 10px 0;
+    color: black;
+  }
+  .nav1 {
+    background: transparent;
+    height: 90px;
+  }
+  .nav2 {
+    color: black;
+    height: 100px;
+    background: var(--fondo);
+  }
+  .contenedor-nav {
+    display: flex;
+    margin: auto;
+    width: 90%;
+    justify-content: space-between;
+    align-items: center;
+    height: inherit;
+  }
+  /* Declaro valores a las etiqueta a, para que queden separadas y el color lo herede de la etiqueta que la contiene */
+  .enlaces .btn-header{
+    display: inline-block;
+    padding: 5px 0;
+    text-decoration: none;
+    margin-right: 17px;
+    font-size: 20px;
+    text-align: center;
+    border-bottom: 3px solid transparent;
+    color: inherit;
+  }
+  
+  /* hover para que se subraye del color que queramos*/
+  .btn-header:hover {
+    transition: 0.5s;
+    color: #e3e3e3;
+  }
+  .logo,
+  .logo img {
+    width: 150px;
+    height: 100px;
+  }
+  .icono {
+    display: none;
+    font-size: 24px;
+    padding: 24px 20px;
+  }
+  
+  .titulo {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    color: #f2f2f2;
+    overflow: hidden;
+    text-align: center;
+  }
+  .titulo > h1 {
+    font-size: 81px;
+  }
+  .titulo > h2 {
+    font-size: 30px;
+    font-weight: 300;
+  }
+  #listaBusqueda{
+    border-radius: 2%;
+    width: 250px;
+  }
+  
+  
+  @media screen and (max-width: 1100px) {
+    #contenedorBuscador{
+      padding:0;
+    }
+    #listaBusqueda{
+      position: relative;
+    }
+    #busqueda{
+      margin:auto;
+    }
+    #buscar{
+      display:none;
+    }
+    #enlaces{
+      margin-top: 38px;
+    }
+    .nav2 {
+      color: #fff;
+    }
+  
+    .icono {
+      display: block;
+      cursor: pointer;
+      color: black;
+    }
+  
+    .enlaces {
+      padding-top: 10px;
+      position: fixed;
+      top: 100px;
+      background: var(--color);
+      left: 0;
+      height: 100%;
+      width: 0;
+      overflow: hidden;
+    }
+  
+    .enlaces .btn-header {
+      display: block;
+      width: 100%;
+      margin-bottom:40px;
+      height: 50px;
+      padding: 30px;
+      text-align: center;
+      color: black;
+      transition: 0.5;
+    }
+
+  
