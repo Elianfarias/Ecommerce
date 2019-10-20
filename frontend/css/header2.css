@@ -22,7 +22,6 @@
     font-size: 20px;
     background: rgba(29, 241, 171, 0.8);
     padding:15px;
-    padding-bottom: 42px;
   }
   #buscar-libro{
     background:transparent;
@@ -54,7 +53,7 @@
   /* El menú cambie segun bajamos en la pagina y ponemos una caja con sombras */
   nav {
     width: 100%;
-    position: fixed;
+    position: fixed !important;
     box-shadow: 0 0 10px 0;
     color: black;
   }
@@ -173,5 +172,9 @@
       color: black;
       transition: 0.5;
     }
-
-  
+    #enlaces-sign{
+      background: rgba(29, 241, 171, 0.8);
+      padding:15px;
+      padding-bottom: 42px;
+      }
+    }

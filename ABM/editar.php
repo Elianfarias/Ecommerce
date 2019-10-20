@@ -24,10 +24,10 @@
 <?php 
 include("conexion.php");
 include("redimensionarImagen.php");
-	if (isset($_POST['editar'])) {
+	if (isset($_REQUEST['editar'])) {
 		$id_editar=$_REQUEST['id_editar'];
-		$foto_previa=$_FILES['foto'];
 		$nombre=$_REQUEST['nombre'];
+		$foto_previa=$_REQUEST['foto'];
 		$escritor=$_REQUEST['escritor'];
 		$editorial=$_REQUEST['editorial'];
 		$isbn=$_REQUEST['isbn'];
@@ -38,17 +38,16 @@ include("redimensionarImagen.php");
 		$subgenero=$_REQUEST['subgenero'];
 		$precio=$_REQUEST['precio'];
 
-		if (is_uploaded_file($_FILES['foto']['tmp_name'])) {
+		if(is_uploaded_file($_FILES['foto']['tmp_name']))
+		{
 			$nbr_foto=$_FILES['foto']['name'];
 			move_uploaded_file($_FILES['foto']['tmp_name'],$nbr_foto);
 			$nombre_imagen=redimensionarImagen($nbr_foto, 300, 500);
-			$eliminarFoto="libros/".$foto_previa;
-			unlink($eliminarFoto);
-		}
+			unlink($nbr_foto);
+		}	
 		else{
-			$nombre_imagen="libros/".$foto_previa;
+			$nombre_imagen = $foto_previa;
 		}
-		
 
 		$sql="UPDATE libro SET foto='$nombre_imagen', nombre='$nombre', escritor='$escritor', editorial= '$editorial',isbn = '$isbn', genero = '$genero', subgenero = '$subgenero', publicacion = '$publicacion', stock = '$stock', descripcion = '$descripcion', precio = '$precio'
 		WHERE id='$id_editar'";
@@ -89,7 +88,7 @@ $registro=mysqli_fetch_assoc($consulta);
 							?>	
 						</div>
 						<div class="col-lg-12">
-							<br><br><input type="file" name="foto" value="<?php echo $registro['foto'];?>"><br>
+							<br><br><input type="file" name="foto"  value="<?php echo $registro['foto'];?>"><br>
 						</div>
 						<div class="col-lg-12">
 							<input type="hidden" class="float-right" name="id_editar" value="<?php echo $registro['id'];?>"><br>
