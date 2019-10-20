@@ -24,10 +24,17 @@
 <?php 
 include("conexion.php");
 include("redimensionarImagen.php");
-	if (isset($_REQUEST['editar'])) {
+
+$id_editar=$_REQUEST['id_editar'];
+$sql="SELECT * FROM libro WHERE id='$id_editar'";
+$consulta=mysqli_query($conexion, $sql);
+$registro=mysqli_fetch_assoc($consulta);
+
+
+	if (isset($_POST['editar'])) {
 		$id_editar=$_REQUEST['id_editar'];
 		$nombre=$_REQUEST['nombre'];
-		$foto_previa=$_REQUEST['foto'];
+		$foto_previa=$registro['foto'];
 		$escritor=$_REQUEST['escritor'];
 		$editorial=$_REQUEST['editorial'];
 		$isbn=$_REQUEST['isbn'];
@@ -38,28 +45,26 @@ include("redimensionarImagen.php");
 		$subgenero=$_REQUEST['subgenero'];
 		$precio=$_REQUEST['precio'];
 
+		$foto_borrar="libros/$foto_previa";
+
 		if(is_uploaded_file($_FILES['foto']['tmp_name']))
 		{
 			$nbr_foto=$_FILES['foto']['name'];
 			move_uploaded_file($_FILES['foto']['tmp_name'],$nbr_foto);
 			$nombre_imagen=redimensionarImagen($nbr_foto, 300, 500);
 			unlink($nbr_foto);
+			unlink($foto_borrar);
+
+			$sql="UPDATE libro SET foto='$nombre_imagen', nombre='$nombre', escritor='$escritor', editorial= '$editorial',isbn = '$isbn', genero = '$genero', subgenero = '$subgenero', publicacion = '$publicacion', stock = '$stock', descripcion = '$descripcion', precio = '$precio'
+				WHERE id='$id_editar'";
 		}	
 		else{
-			$nombre_imagen = $foto_previa;
+			$sql="UPDATE libro SET nombre='$nombre', escritor='$escritor', editorial= '$editorial',isbn = '$isbn', genero = '$genero', subgenero = '$subgenero', publicacion = '$publicacion', stock = '$stock', descripcion = '$descripcion', precio = '$precio'
+				WHERE id='$id_editar'";
 		}
-
-		$sql="UPDATE libro SET foto='$nombre_imagen', nombre='$nombre', escritor='$escritor', editorial= '$editorial',isbn = '$isbn', genero = '$genero', subgenero = '$subgenero', publicacion = '$publicacion', stock = '$stock', descripcion = '$descripcion', precio = '$precio'
-		WHERE id='$id_editar'";
 
 		$editar=mysqli_query($conexion, $sql)? header("location:index.php?id_modificado=$id_editar") : print('<script>alert("Error al modificar el registro. ")</script>');
 	}
-
-
-$id_editar=$_REQUEST['id_editar'];
-$sql="SELECT * FROM libro WHERE id='$id_editar'";
-$consulta=mysqli_query($conexion, $sql);
-$registro=mysqli_fetch_assoc($consulta);
 
 
 ?>
