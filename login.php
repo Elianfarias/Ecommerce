@@ -23,7 +23,7 @@
       integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="css/login.css">
 
 </head>
   <body>
@@ -33,7 +33,7 @@
 
     <!-- Icon -->
     <div class="fadeIn first">
-      <a href="index.php"><img src="../img/moonlight.png" id="icon" alt="User Icon" /></a>
+      <a href="index.php"><img src="img/moonlight.png" id="icon" alt="User Icon" /></a>
     </div>
 
     <!-- Login Form -->

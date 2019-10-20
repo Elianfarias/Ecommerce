@@ -1,4 +1,4 @@
-<?php include_once("../includes/conexion.php");
+<?php include_once("includes/conexion.php");
 ?>
 <html lang="en">
   <head>
@@ -19,9 +19,9 @@
       integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="../css/catalogo2.css" />
-    <link rel="stylesheet" href="../css/header2.css" />
-    <link rel="stylesheet" href="../css/footer3.css" />
+    <link rel="stylesheet" href="css/catalogo2.css" />
+    <link rel="stylesheet" href="css/header2.css" />
+    <link rel="stylesheet" href="css/footer3.css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
  </head>
   <body>
@@ -29,7 +29,7 @@
 <nav class="navbar-light" id="nav" style="position: fixed !important;z-index: 100">
     <div class="contenedor-nav">
       <div class="logo">
-        <a href="index.php"> <img src="../img/moonlight.png" alt=""/></a>
+        <a href="index.php"> <img src="img/moonlight.png" alt=""/></a>
       </div>
       <div class="enlaces" id="contenedorBuscador"> 
         <div class="row">
@@ -75,13 +75,13 @@
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item">
-      <img class="d-block slider w-100" src="../img/slider/sliderImagen3.png" height="50%" alt="First slide">
+      <img class="d-block slider w-100" src="img/slider/sliderImagen3.png" height="50%" alt="First slide">
     </div>
     <div class="carousel-item active">
-      <img class="d-block slider w-100" src="../img/slider/sliderImagen2.png" height="50%" alt="Second slide">
+      <img class="d-block slider w-100" src="img/slider/sliderImagen2.png" height="50%" alt="Second slide">
     </div>
     <div class="carousel-item">
-      <img class="d-block slider w-100" src="../img/slider/sliderImagen6.jpg" height="50%" alt="Third slide">
+      <img class="d-block slider w-100" src="img/slider/sliderImagen6.jpg" height="50%" alt="Third slide">
     </div>
   </div>
   <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -115,10 +115,10 @@
 		</div>
   </div>
 <?php 
-  include("../includes/footer.html");
+  include("includes/footer.html");
 ?>  
-<script src="../js/filtrosCatalogo3.js"></script>
-  <script src="../js/header.js"></script>
-  <script src="../js/buscador3.js"></script>
+<script src="js/filtrosCatalogo3.js"></script>
+  <script src="js/header.js"></script>
+  <script src="js/buscador3.js"></script>
 </body>
 </html>

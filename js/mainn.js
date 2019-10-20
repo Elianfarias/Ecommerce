@@ -14,7 +14,7 @@ $(".filter").click(function() {
 });
 $(function() {
   $.ajax({
-    url: "../includes/recomendados.php",
+    url: "includes/recomendados.php",
     type: "GET",
     success: function(respuesta) {
       var tareas = JSON.parse(respuesta);
@@ -22,7 +22,7 @@ $(function() {
         $("#recomendado-libro").append(`<div class="col-lg-4 col-md-6 col-sm-12 catalogoUnidad contenedorCatalogo">
         <div class="shadow-lg p-3 mb-5 bg-white rounded">
         <div class="col-lg-12 text-center contenedorCatalogo">
-        <img src="../../ABM/libros/${tarea.foto}" width="187.5px" heigth="375px" alt="${tarea.nombre}" >
+        <img src="ABM/libros/${tarea.foto}" width="187.5px" heigth="375px" alt="${tarea.nombre}" >
             </div>
             <div class="col-lg-12 col-md-6 col-sm-4 contenedorCatalogo">
                 <div class="row mx-auto mt-3">
@@ -44,7 +44,7 @@ $(function() {
     }
   });
     $.ajax({
-      url: "../includes/descuentos.php",
+      url: "includes/descuentos.php",
       type: "GET",
       success: function(respuesta) {
         var tareas = JSON.parse(respuesta);
@@ -53,7 +53,7 @@ $(function() {
           $("#descuento-libro").append(`<div class="col-lg-4 col-md-6 col-sm-12 catalogoUnidad contenedorCatalogo">
           <div class="shadow-lg p-3 mb-5 bg-white rounded">
           <div class="col-lg-12 text-center contenedorCatalogo">
-          <img src="../../ABM/libros/${tarea.foto}" width="187.5px" heigth="375px" alt="${tarea.nombre}" >
+          <img src="ABM/libros/${tarea.foto}" width="187.5px" heigth="375px" alt="${tarea.nombre}" >
               </div>
               <div class="col-lg-12 col-md-6 col-sm-4 contenedorCatalogo">
                   <div class="row mx-auto mt-3">

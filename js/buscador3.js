@@ -14,7 +14,7 @@ $(function () {
                 $('#listaBusqueda').css({"width":"260px","margin-left":"0"})
             }
         $.ajax({
-            url:"../includes/buscador.php",
+            url:"includes/buscador.php",
             type:"POST",
             data:{search},
             success: function(respuesta) {
