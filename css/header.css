@@ -186,4 +186,5 @@
         var(--color2),
         var(--color3)
       );
+      position: fixed;
     }

@@ -9,17 +9,17 @@
 	<br>
 	<div class="col-lg-12">
 		<label>Nombre</label>
-		<input type="text" name="nombre" class="float-right">
+		<input type="text" required name="nombre" class="float-right">
 	</div>
 	<br>
 	<div class="col-lg-12">
 		<label>Escritor</label>
-		<input type="text" name="escritor" class="float-right">
+		<input type="text" required name="escritor" class="float-right">
 	</div>
 	<br>
 		<div class="col-lg-12">
 			<label> Genero </label>
-			<select name="genero" class="float-right">
+			<select required name="genero" class="float-right">
 				<option value="novela">Novela</option>
 				<option value="biografia">Biografia</option>
 				<option value="fabula">Fabula</option>
@@ -30,32 +30,32 @@
 	<br>
 	<div class="col-lg-12">
 		<label>Editorial</label>
-		<input type="text" name="editorial" class="float-right">
+		<input type="text" required name="editorial" class="float-right">
 	</div>
 	<br>
 	<div class="col-lg-12">
 		<label>ISBN</label>
-		<input type="number" name="isbn" class="float-right">
+		<input type="number" required name="isbn" class="float-right">
 	</div>
 	<br>
 	<div class="col-lg-12">
 		<label>Subgenero</label>
-		<input type="text" name="subgenero" class="float-right">
+		<input type="text" required name="subgenero" class="float-right">
 	</div>
 	<br>
 	<div class="col-lg-12">
 		<label>Fecha</label>
-		<input type="date" name="publicacion" class="float-right">
+		<input type="date" required name="publicacion" class="float-right">
 	</div>
 	<br>
 	<div class="col-lg-12">
 		<label>Stock</label>
-		<input type="number" name="stock" class="float-right">
+		<input type="number" required name="stock" class="float-right">
 	</div>
 	<br>
 	<div class="col-lg-12">
 		<label>Precio</label>
-		<input type="number" name="precio" class="float-right">
+		<input type="number" required name="precio" class="float-right">
 	</div>
 	<br>
 	<div class="col-lg-12">
@@ -66,12 +66,12 @@
 		</div>
 		<div class="row">
 			<div class="col-lg-12">
-			<textarea type="text" name="descripcion" class="inp-desc"  style="WIDTH: 100%;" rows="10" cols="50"> </textarea>
+			<textarea type="text" required name="descripcion" class="inp-desc"  style="WIDTH: 100%;" rows="10" cols="50"> </textarea>
 			</div>
 		</div>
 	</div>
 	<br>
-	<button type="submit" name="insertar" class="btn btn-success float-right">Añadir</button>
+	<button type="submit" required name="insertar" class="btn btn-success float-right">Añadir</button>
 
 </form>
 

@@ -21,17 +21,17 @@ $(function() {
       tareas.forEach(tarea => {
         $("#recomendado-libro").append(`<div class="col-lg-4 col-md-6 col-sm-12 catalogoUnidad contenedorCatalogo">
         <div class="shadow-lg p-3 mb-5 bg-white rounded">
-        <div class="col-lg-12 text-center contenedorCatalogo">
+        <div class="col-lg-12 contenedorCatalogo">
         <img src="ABM/libros/${tarea.foto}" width="187.5px" heigth="375px" alt="${tarea.nombre}" >
             </div>
-            <div class="col-lg-12 col-md-6 col-sm-4 contenedorCatalogo">
-                <div class="row mx-auto mt-3">
-                    <p class="font-italic">
+            <div class="col-lg-12 col-md-6 col-sm-12 text-left contenedorCatalogo">
+                <div class="row mx-auto mt-3" style="height:74px">
+                    <p class="text-dark" style="font-size:25px">
                      ${tarea.nombre}
                     </p>
                 </div>
-                <p class="font-weight-light font-italic">${tarea.escritor}</p>
-                <p class="font-weight-light font-italic">$${tarea.precio}</p>
+                <p class="font-weight-light mb-0 text-dark">${tarea.escritor}</p>
+                <p class="font-weight-light mb-0">$${tarea.precio}</p>
                 <p class="mb-5"><button type="button" class="btn btn-link float-right"><a href="articulo.php?id=${tarea.id}">Ver Más</a></button></p>
                 
             </div>     
@@ -52,17 +52,17 @@ $(function() {
         tareas.forEach(tarea => {
           $("#descuento-libro").append(`<div class="col-lg-4 col-md-6 col-sm-12 catalogoUnidad contenedorCatalogo">
           <div class="shadow-lg p-3 mb-5 bg-white rounded">
-          <div class="col-lg-12 text-center contenedorCatalogo">
+          <div class="col-lg-12 contenedorCatalogo">
           <img src="ABM/libros/${tarea.foto}" width="187.5px" heigth="375px" alt="${tarea.nombre}" >
               </div>
-              <div class="col-lg-12 col-md-6 col-sm-4 contenedorCatalogo">
-                  <div class="row mx-auto mt-3">
-                      <p class="font-italic">
+              <div class="col-lg-12 col-md-6 col-sm-12 text-left contenedorCatalogo">
+                  <div class="row mx-auto mt-3" style="height:74px">
+                      <p class="text-dark" style="font-size: 25px">
                        ${tarea.nombre}
                       </p>
                   </div>
-                  <p class="font-weight-light font-italic">${tarea.escritor}</p>
-                  <p class="font-weight-light font-italic">$${tarea.precio}</p>
+                  <p class="font-weight-light mb-0 text-dark">${tarea.escritor}</p>
+                  <p class="font-weight-light mb-0">$${tarea.precio}</p>
                   <p class="mb-5"><button type="button" class="btn btn-link float-right"><a href="articulo.php?id=${tarea.id}">Ver Más</a></button></p>
                   
               </div>     

@@ -38,7 +38,7 @@ include("includes/header.html");
 include("includes/main.html");
 include("includes/footer.html");
 ?>
-  <script src="js/mainn.js"></script>
+  <script src="js/main2.js"></script>
   <script src="js/header.js"></script>
   <script src="js/buscador3.js"></script>
 </html>

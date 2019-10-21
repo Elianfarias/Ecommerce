@@ -72,16 +72,16 @@
   </nav>
 <!--Fin de Nav-->
 <!-- Inicio de Slider -->
-<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+<div id="carouselExampleControls" class="carousel slide slider" data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item">
-      <img class="d-block slider w-100" src="img/slider/sliderImagen3.png" height="50%" alt="First slide">
+      <img class="d-block slider w-100" src="img/slider/sliderImagen3.png" height="60%" alt="First slide">
     </div>
     <div class="carousel-item active">
-      <img class="d-block slider w-100" src="img/slider/sliderImagen2.png" height="50%" alt="Second slide">
+      <img class="d-block slider w-100" src="img/slider/sliderImagen2.png" height="60%" alt="Second slide">
     </div>
     <div class="carousel-item">
-      <img class="d-block slider w-100" src="img/slider/sliderImagen6.jpg" height="50%" alt="Third slide">
+      <img class="d-block slider w-100" src="img/slider/sliderImagen6.jpg" height="60%" alt="Third slide">
     </div>
   </div>
   <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -107,7 +107,7 @@
         <a  class="btn btn-secondary btn-lg genero col-lg-2 col-md-12  col-sm-12 contenedorCatalogo" role="button" data-genero="biografia" aria-pressed="true">Biografias</a>
         <a  class="btn btn-secondary btn-lg genero col-lg-2 col-md-12  col-sm-12 contenedorCatalogo" role="button" data-genero="politica" aria-pressed="true">Politica</a>
         <a  class="btn btn-secondary btn-lg genero col-lg-2 col-md-12  col-sm-12 contenedorCatalogo" role="button"  data-genero="novela" aria-pressed="true">Novela</a>
-        <a  class="btn btn-secondary btn-lg genero col-lg-2 col-md-12  col-sm-12 contenedorCatalogo" role="button"  data-genero="literaturainfantil" aria-pressed="true">Literatura Infantil</a>
+        <a  class="btn btn-secondary btn-lg genero col-lg-3 col-md-12  col-sm-12 contenedorCatalogo" role="button"  data-genero="literaturainfantil" aria-pressed="true">Literatura Infantil</a>
       </div>
     </div>
     <br><hr><br>
