@@ -75,7 +75,7 @@ include("../includes/main.html");
 
 include("../includes/footer.html");
 ?>
-<script src="../js/mainn.js"></script>
+<script src="main.js"></script>
 <script src="../js/headerrr.js"></script>
 <script src="../js/buscador3.js"></script>
 
