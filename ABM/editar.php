@@ -80,7 +80,7 @@ $registro=mysqli_fetch_assoc($consulta);
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-lg-6 col-sm-6 mx-auto shadow-lg p-3 mb-5 bg-white rounded">
+				<div class="col-lg-6 col-md-8 col-sm-8 mx-auto shadow-lg p-3 mb-5 bg-white rounded">
 					<form action="editar.php" method="post" enctype="multipart/form-data" >
 					  <!--ENCTYPE SUBIR IMAGEN -->
 					  <div class="img-insert col-lg-12">
