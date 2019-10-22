@@ -1,4 +1,8 @@
-
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 :root {
   --color1: rgb(219, 144, 0.5);
   --color2: rgba(29, 241, 171, 0.6);
@@ -8,12 +12,6 @@
   --titulos: 33px;
   --espacios: 10px;
   --espacios-contenido: 45px;
-}
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "open sans";
 }
 body {
   background: var(--fondo);
