@@ -51,7 +51,7 @@ $registro=mysqli_fetch_assoc($consulta);
 		{
 			$nbr_foto=$_FILES['foto']['name'];
 			move_uploaded_file($_FILES['foto']['tmp_name'],$nbr_foto);
-			$nombre_imagen=redimensionarImagen($nbr_foto, 300, 500);
+			$nombre_imagen=redimensionarImagen($nbr_foto, 600, 1000);
 			unlink($nbr_foto);
 			unlink($foto_borrar);
 

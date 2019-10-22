@@ -93,7 +93,7 @@
 			$nbr_foto=$_FILES['foto']['name'];
 			move_uploaded_file($_FILES['foto']['tmp_name'],$nbr_foto);
 		/*Llamo a la función redimensionar, envío nombre de la imagen y ancho final*/
-			$nombre_imagen=redimensionarImagen($nbr_foto, 300, 500);
+			$nombre_imagen=redimensionarImagen($nbr_foto, 600, 1000);
 			unlink($nbr_foto);
 		}else{
 			$nombre_imagen="estandar.jpg";
