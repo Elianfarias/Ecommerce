@@ -65,6 +65,9 @@ else{
         <a href="../catalogo.php" id="enlaces-libros" class="btn-header" style="margin-bottom: 15px"
           >Libros</a
         >
+        <a href="../carrito.php" id="enlaces-libros" class="btn-header" style="margin-bottom: 15px"
+                >Carrito</a
+              >
         <a href="../includes/salir.php" id="enlaces-sign" class="btn-header rounded"
           >Cerrar sesion</a>
       </div>
