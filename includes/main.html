@@ -2,31 +2,33 @@
    
 
  <!-- Main ( Todo el cuerpo del html ya sea los libros - recomendaciones - descuentos )-->
- <main class="container" >
+ <main class="container-fluid" >
     <!-- Recomendados (Aparecen los libros recomendados ) - contenedor ( todos los que tengan la clase contenedor va a tener determinado formato que ponga ) -->
     
     <section class="recomendados contenedor">
       <h3>Recomendados</h3>
-      <p class="after">Conoce nuestro libros recomendados</p>
       <!-- p con class after para que todos los p que quiero tenga determinado color y tamaño -->
-      <div class="botones-work mx-auto">
-        <ul class="row mx-auto">
-          <li class="filter active col-sm-12 col-md-4 col-lg-3" data-nombre="todos">Todos</li>
-          <li class="filter col-sm-12 col-md-4 col-lg-3" data-nombre="recomendados" >Recomendados</li>
-          <li class="filter col-sm-12 col-md-4 col-lg-3" data-nombre="descuentos">Descuentos</li>
+      <p class="after">Conoce nuestro libros recomendados</p>
+      <div class="botones-work">
+        <ul>
+          <li class="filter active" data-nombre="todos">Todos</li>
+          <li class="filter" data-nombre="recomendados">Recomendados</li>
+          <li class="filter" data-nombre="descuentos">Descuentos</li>
         </ul>
       </div>
-      <!-- Caja para usar flexbox en todos las cajas contenedoras -->
-      <div class="recomendados-libro" id="recomendado-libro">
-        <!-- Caja que envuelve cada producto y tiene una apariencia -->
-      
-       </div>
+      <div class="container">
+        <!-- Caja para usar flexbox en todos las cajas contenedoras -->
+        <div class="recomendados-libro row" id="recomendado-libro">
+          <!-- Caja que envuelve cada producto y tiene una apariencia -->
+        
+         </div>
 
-      <!-- Descuentos -->
-      <br /><br />
+        <!-- Descuentos -->
+        <br /><br />
 
-     <div class="recomendados-libro" id="descuento-libro">
-      </div> 
+      <div class="recomendados-libro row" id="descuento-libro">
+        </div> 
+    </div>
     </section> 
 
     <!-- About ( Fondo con imagen ) - despues lo mismo que los otros section basicamente  -->
