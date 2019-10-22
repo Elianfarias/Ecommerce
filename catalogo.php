@@ -23,7 +23,7 @@ include_once("includes/conexion.php");
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="css/catalogo2.css" />
-    <link rel="stylesheet" href="css/header2.css" />
+    <link rel="stylesheet" href="css/headerSolo.css" />
     <link rel="stylesheet" href="css/footer3.css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
  </head>
@@ -31,9 +31,7 @@ include_once("includes/conexion.php");
   <?php
   if (isset($_SESSION['usuario'])) {
     include("includes/headerUsuario.html");
-  } else {
-    include("includes/header.html");
-  }
+  }else{
   ?>
 <!-- Inicio de nav-->
 <nav class="navbar-light" id="nav" style="position: fixed !important;z-index: 100">
@@ -80,6 +78,7 @@ include_once("includes/conexion.php");
       </div>
     </div>
   </nav>
+  <?php } ?>
 <!--Fin de Nav-->
 <!-- Inicio de Slider -->
 <div id="carouselExampleControls" class="carousel slide slider" data-ride="carousel">
