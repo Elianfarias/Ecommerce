@@ -1,3 +1,4 @@
 <?php
-$conexion = mysqli_connect('localhost','root','','moon') or DIE ("Error".mysqli_connect_errno($conexion))
+$conexion = new mysqli('localhost','root','','moon') or DIE ($conexion -> connect_errno());
+$conexion -> Set_charset('utf-8');
 ?>

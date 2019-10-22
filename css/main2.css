@@ -52,7 +52,10 @@ body {
   background: var(--color1);
   margin-bottom: var(--espacios-contenido);
 }
-
+.botones-work ul{
+  display: flex;
+  justify-content: center;
+}
 .recomendados-libro {
   display: flex;
   justify-content: space-between;
@@ -96,10 +99,20 @@ body {
   display: inline-block;
   margin-left:var(--espacios);
   margin-bottom: var(--espacios-contenido);
+  position: inherit !important;
+}
+.botones-work ul{
+width: 100%;
 }
 .botones-work li:hover{
   background: var(--color1);
   color:white;
   cursor: pointer;
 }
-
+@media screen and  (max-width: 600px){
+  .botones-work li{
+    margin-left:0px;
+ margin-bottom: 5px;
+ position: inherit !important;
+  }
+}
