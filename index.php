@@ -2,9 +2,9 @@
 session_start();
 if (isset($_SESSION['usuario'])) {
   if ($_SESSION['usuario']['tipoUsuario'] == 'admin') {
-    header('location: sesiones/indexAdmin.php');
+    header('location: admin/index.php');
   } elseif ($_SESSION['usuario']['tipoUsuario'] == 'usuario') {
-    header('location: sesiones/indexUsuario.php');
+    header('location: usuario/index.php');
   }
 }
 ?>

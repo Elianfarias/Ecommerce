@@ -20,11 +20,12 @@ else{
   <link rel="stylesheet" href="../css/header.css" />
   <link rel="stylesheet" href="../css/main2.css" />
   <link rel="stylesheet" href="../css/footer3.css" />
+  <  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous" />
 
 
 </head>
@@ -63,13 +64,10 @@ else{
       </div>
       <div class="enlaces" id="enlaces">
         <a href="../catalogo.php" id="enlaces-libros" class="btn-header" style="margin-bottom: 15px"
-          >Libros</a
+        >Libros</a
         >
-        <a href="../carrito.php" id="enlaces-libros" class="btn-header" style="margin-bottom: 15px"
-                >Carrito</a
-              >
-        <a href="../includes/salir.php" id="enlaces-sign" class="btn-header rounded"
-          >Cerrar sesion</a>
+        <a href="carrito.php"  class="btn-header" style="margin-bottom: 15px"><span class="fa fa-cart-plus " style="font-size: 20px;padding-top: 5px;" ></span></a>
+      <a href="../includes/salir.php"  class="btn-header rounded">Cerrar sesion</a>
       </div>
       <div class="icono" id="open">
         <span>&#9776;</span>

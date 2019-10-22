@@ -29,16 +29,25 @@ function agregarPrimerProducto($id)
     while ($registro = $resultado->fetch_array()) {
 
         $id = $registro['id'];
+        $nombre = $registro['nombre'];
+        $autor = $registro['escritor'];
+        $foto = $registro['foto'];
         $Descripcion = $registro['descripcion'];
         $Precio = $registro['precio'];
         $Cantidad = 1; //por ser la primera vez que cargo el producto
     }
     $prods_compra[] = array(
-        'id' => $id, 'descripcion' => $Descripcion,
-        'precio' => $Precio, 'cantidad' => $Cantidad
+        'id' => $id,
+        'nombre' => $nombre,
+        'autor' => $autor,
+        'foto' => $foto,
+        'descripcion' => $Descripcion,
+        'precio' => $Precio,
+        'cantidad' => $Cantidad
     );
     //CREAMOS LA VARIABLE DE SESSION $_SESSION['carrito']
     $_SESSION['carrito'] = $prods_compra;
+    var_dump($_SESSION['carrito']);
     $resultado->free();
     $conexion->close();
 }
@@ -51,31 +60,35 @@ function mostrarProductosCarrito()
     } else {
         $total = 0;
         $prods_compra = $_SESSION['carrito'];
-        print_r($prods_compra);
-        echo '<br>';
+
         foreach ($prods_compra as  $indice => $producto) {
-            echo 'id - ' . $producto['id'] . '<br>';
-            echo 'descripcion - ' . $producto['descripcion'] . '<br>';
-            echo 'precio - ' . $producto['precio'] . '<br>';
-            echo 'cantidad - ' . $producto['cantidad'] . '<br>';
+            echo '
+            <hr>
+            <div class="row">
+            <div class="col-lg-4"><img src="ABM/libros/' . $producto['foto'] . '" width="187.5px" heigth="375px" alt="' . $producto['nombre'] . '" ></div>
+            <div class="row">
+             <div class="col-lg-12"> ' . $producto['nombre'] . '</div>
+             <div class="col-lg-12">$' . $producto['precio'] . '</div>
+             <div class="col-lg-12">Autor: ' . $producto['autor'] . '</div>             
+            </div>';
 
             if ($prods_compra[$indice]['cantidad'] > 1) {
-                echo '<a href="carrito3.php?id_resta=' . $prods_compra[$indice]['id'] . '">restarCantidad |</a> ';
-                echo '<a href="carrito3.php?id_suma=' . $prods_compra[$indice]['id'] . '">sumarCantidad </a><br> ';
+                echo '<div class="row text-center mt-3" style="width:100%"> <div class="col-lg-4"><a href="carrito2.php?id_resta=' . $prods_compra[$indice]['id'] . '">restarCantidad |</a> ';
+                echo '<a href="carrito2.php?id_suma=' . $prods_compra[$indice]['id'] . '">sumarCantidad </a><br></div> ';
             } else {
-                echo '<a href="carrito3.php?id_suma=' . $prods_compra[$indice]['id'] . '">
+                echo '<a href="carrito2.php?id_suma=' . $prods_compra[$indice]['id'] . '">
 	sumarCantidad </a><br> ';
             }
-            echo 'Subtotal: $' . $prods_compra[$indice]['cantidad'] * $prods_compra[$indice]['precio'];
+            echo '<div class="col-lg-4"> Subtotal: $' . $prods_compra[$indice]['cantidad'] * $prods_compra[$indice]['precio'] . '</div>';
+            echo '<div class="col-lg-4"> <a href="carrito2.php?id_borra=' . $prods_compra[$indice]['id'] . '">
+			Eliminar producto del carrito </a>  </div> </div> <br><br>';
             echo '<br>';
-            echo '<a href="carrito3.php?id_borra=' . $prods_compra[$indice]['id'] . '">
-			Eliminar producto del carrito </a> <br><br>';
             $total = $total + ($prods_compra[$indice]['cantidad'] * $prods_compra[$indice]['precio']);
         }
         echo 'TOTAL COMPRA $' . $total . '<br><br>';
     }
 }
-function buscarSiProductoExite($id)
+function buscarSiProductoExiste($id)
 {
     $prods_compra = $_SESSION['carrito'];
     $existe = 0;
@@ -96,12 +109,20 @@ function agregarNuevoProducto($id)
     $resultado = $conexion->query($sql);
     while ($registro = $resultado->fetch_array()) {
         $id = $registro['id'];
+        $nombre = $registro['nombre'];
+        $autor = $registro['escritor'];
+        $foto = $registro['foto'];
         $Descripcion = $registro['descripcion'];
         $Precio = $registro['precio'];
         $Cantidad = 1; //por ser la primera vez que cargo el producto
     }
     $nuevo_prod = array(
-        'id' => $id, 'descripcion' => $Descripcion, 'precio' => $Precio,
+        'id' => $id,
+        'nombre' => $nombre,
+        'autor' => $autor,
+        'foto' => $foto,
+        'descripcion' => $Descripcion,
+        'precio' => $Precio,
         'cantidad' => $Cantidad
     );
     array_push($prods_compra, $nuevo_prod);

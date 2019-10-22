@@ -29,18 +29,19 @@ include("includes/logicaCarrito.php");
     ?>
     <div class="container">
         <div class="row">
-            <div class="col-lg-6">
-             <span class="h4">   Mi Carrito </span>
+            <div class="col-lg-6" style="margin-top:150px">
+                <span class="h4"> Mi Carrito </span>
             </div>
-            <div class="col-lg-6 text-right">
+            <div class="col-lg-6 text-right" style="margin-top:150px">
                 <a href="carrito3.php" class="h5">ver carrito</a><br><br>
             </div>
         </div>
-              
-                    <?php
-                    listarProductos();
-                    ?>
+
+        <?php
+        listarProductos();
+        ?>
+    </div>
+    <script src="js/header.js"></script>
 
 </body>
-
 </html>
