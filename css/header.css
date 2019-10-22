@@ -53,7 +53,7 @@
   /* El menú cambie segun bajamos en la pagina y ponemos una caja con sombras */
   nav {
     width: 100%;
-    position: fixed;
+    position: fixed !important;
     box-shadow: 0 0 10px 0;
     color: black;
   }
@@ -178,4 +178,12 @@
       padding-bottom: 42px;
       }
     }
-  
+    .slider{
+      background: linear-gradient(
+        to bottom,
+        var(--color),
+        var(--color2),
+        var(--color3)
+      );
+      position: fixed;
+    }
