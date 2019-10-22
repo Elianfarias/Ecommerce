@@ -178,12 +178,3 @@
       padding-bottom: 42px;
       }
     }
-    .slider{
-      background: linear-gradient(
-        to bottom,
-        var(--color),
-        var(--color2),
-        var(--color3)
-      );
-      position: fixed;
-    }

@@ -24,10 +24,17 @@
 <?php 
 include("conexion.php");
 include("redimensionarImagen.php");
+
+$id_editar=$_REQUEST['id_editar'];
+$sql="SELECT * FROM libro WHERE id='$id_editar'";
+$consulta=mysqli_query($conexion, $sql);
+$registro=mysqli_fetch_assoc($consulta);
+
+
 	if (isset($_POST['editar'])) {
 		$id_editar=$_REQUEST['id_editar'];
-		$foto_previa=$_FILES['foto'];
 		$nombre=$_REQUEST['nombre'];
+		$foto_previa=$registro['foto'];
 		$escritor=$_REQUEST['escritor'];
 		$editorial=$_REQUEST['editorial'];
 		$isbn=$_REQUEST['isbn'];
@@ -38,29 +45,26 @@ include("redimensionarImagen.php");
 		$subgenero=$_REQUEST['subgenero'];
 		$precio=$_REQUEST['precio'];
 
-		if (is_uploaded_file($_FILES['foto']['tmp_name'])) {
+		$foto_borrar="libros/$foto_previa";
+
+		if(is_uploaded_file($_FILES['foto']['tmp_name']))
+		{
 			$nbr_foto=$_FILES['foto']['name'];
 			move_uploaded_file($_FILES['foto']['tmp_name'],$nbr_foto);
-			$nombre_imagen=redimensionarImagen($nbr_foto, 300, 500);
-			$eliminarFoto="libros/".$foto_previa;
-			unlink($eliminarFoto);
-		}
-		else{
-			$nombre_imagen="libros/".$foto_previa;
-		}
-		
+			$nombre_imagen=redimensionarImagen($nbr_foto, 600, 1000);
+			unlink($nbr_foto);
+			unlink($foto_borrar);
 
-		$sql="UPDATE libro SET foto='$nombre_imagen', nombre='$nombre', escritor='$escritor', editorial= '$editorial',isbn = '$isbn', genero = '$genero', subgenero = '$subgenero', publicacion = '$publicacion', stock = '$stock', descripcion = '$descripcion', precio = '$precio'
-		WHERE id='$id_editar'";
+			$sql="UPDATE libro SET foto='$nombre_imagen', nombre='$nombre', escritor='$escritor', editorial= '$editorial',isbn = '$isbn', genero = '$genero', subgenero = '$subgenero', publicacion = '$publicacion', stock = '$stock', descripcion = '$descripcion', precio = '$precio'
+				WHERE id='$id_editar'";
+		}	
+		else{
+			$sql="UPDATE libro SET nombre='$nombre', escritor='$escritor', editorial= '$editorial',isbn = '$isbn', genero = '$genero', subgenero = '$subgenero', publicacion = '$publicacion', stock = '$stock', descripcion = '$descripcion', precio = '$precio'
+				WHERE id='$id_editar'";
+		}
 
 		$editar=mysqli_query($conexion, $sql)? header("location:index.php?id_modificado=$id_editar") : print('<script>alert("Error al modificar el registro. ")</script>');
 	}
-
-
-$id_editar=$_REQUEST['id_editar'];
-$sql="SELECT * FROM libro WHERE id='$id_editar'";
-$consulta=mysqli_query($conexion, $sql);
-$registro=mysqli_fetch_assoc($consulta);
 
 
 ?>
@@ -76,7 +80,7 @@ $registro=mysqli_fetch_assoc($consulta);
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-lg-6 col-sm-6 mx-auto shadow-lg p-3 mb-5 bg-white rounded">
+				<div class="col-lg-6 col-md-8 col-sm-8 mx-auto shadow-lg p-3 mb-5 bg-white rounded">
 					<form action="editar.php" method="post" enctype="multipart/form-data" >
 					  <!--ENCTYPE SUBIR IMAGEN -->
 					  <div class="img-insert col-lg-12">
@@ -89,7 +93,7 @@ $registro=mysqli_fetch_assoc($consulta);
 							?>	
 						</div>
 						<div class="col-lg-12">
-							<br><br><input type="file" name="foto" value="<?php echo $registro['foto'];?>"><br>
+							<br><br><input type="file" name="foto"  value="<?php echo $registro['foto'];?>"><br>
 						</div>
 						<div class="col-lg-12">
 							<input type="hidden" class="float-right" name="id_editar" value="<?php echo $registro['id'];?>"><br>
