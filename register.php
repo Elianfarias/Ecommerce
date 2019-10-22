@@ -27,8 +27,9 @@
         <a href="index.php"><img src="img/moonlight.png" id="icon" alt="User Icon" /></a>
       </div>
       <form action="register.php" method="POST">
-        <input type="text" class="fadeIn second" name="name" placeholder="Nombre y Apellido*">
-        <input type="password" class="fadeIn third" name="pass" placeholder="Contraseña*">
+        <input type="text" class="fadeIn second" name="username" pattern="[A-Za-z0-9_-]{1,30}" placeholder="Nombre de usuario*">
+        <input type="text" class="fadeIn second" name="name"  placeholder="Nombre y Apellido*">
+        <input type="password" class="fadeIn third" name="pass"  placeholder="Contraseña*">
         <input type="password" class="fadeIn third" name="confirmPass" placeholder="Confirmar contraseña*">
         <input type="email" class="fadeIn third" name="email" placeholder="Email*"><br>
         <label class="text-secondary">* obligatorio</label><br>
@@ -51,9 +52,10 @@ if (isset($_REQUEST['insertar'])) {
   if ($pass == $confirmPass) {
     $name = $_REQUEST['name'];
     $email = $_REQUEST['email'];
+    $username = $_REQUEST['username'];
     $code = $pass;
     $fecha_actual = date("d/m/Y");
-    $sql = "INSERT INTO usuarios (name, pass, email,code,validation, fechaRegistro, ultimaConexion) VALUES ('$name', '$pass', '$email', '$code', 'No verificado', '$fecha_actual', '$fecha_actual')";
+    $sql = "INSERT INTO usuarios (name, username, pass, email,code,validation, fechaRegistro, ultimaConexion, tipoUsuario) VALUES ('$name', '$username', '$pass', '$email', '$code', 'No verificado', '$fecha_actual', '$fecha_actual','usuario')";
     //  $para = $email;
     //   $tema = 'Confirmación de email';
     //   $mensaje = 'Se ha registrado a'."<a href='http://localhost/Ecommerce/Moonlight/' style='text-decoration:none;color:red;'> Mercado Moonlight </a> con el usuario ".$name."\r\n\n".
@@ -65,6 +67,7 @@ if (isset($_REQUEST['insertar'])) {
     //          'Reply-to: '.$email. "\r\n";
     //   mail($para, $tema, $mensaje, $headers);
     $insertar = mysqli_query($conexion, $sql) ? print('<script>alert("Registro Exitoso")</script>') : print('<script>alert("ERROR")</script>');
+    header("location:index.php");
   } else {
     print('<script>alert("Error al registrase.")</script>');
     header ('location:index.php?mesage=Error en el registro');   
