@@ -9,13 +9,13 @@ function listarProductos()
             echo '
             <hr>
             <div class="row">
-            <div class="col-lg-4"><img src="ABM/libros/' . $registro['foto'] . '" width="187.5px" heigth="375px" alt="' . $registro['nombre'] . '" ></div>
+            <div class="col-lg-4 col-sm-12"><img src="ABM/libros/' . $registro['foto'] . '" width="187.5px" heigth="375px" alt="' . $registro['nombre'] . '" ></div>
             <div class="row">
              <div class="col-lg-12"> ' . $registro['nombre'] . '</div>
              <div class="col-lg-12">$' . $registro['precio'] . '</div>
              <div class="col-lg-12">Autor: ' . $registro['escritor'] . '</div>             
             </div>
-				 <div class="col-lg-4 ml-auto text-right"><a href="carrito3.php?id=' . $registro['id'] . '">agregar a carrito</a></div> </div>';
+				 <div class="col-lg-4 col-sm-12 ml-auto text-right"><a href="carrito3.php?id=' . $registro['id'] . '">agregar a carrito</a></div> </div>';
         }
     }
     $consulta->free();
@@ -47,7 +47,7 @@ function agregarPrimerProducto($id)
     );
     //CREAMOS LA VARIABLE DE SESSION $_SESSION['carrito']
     $_SESSION['carrito'] = $prods_compra;
-    var_dump($_SESSION['carrito']);
+    
     $resultado->free();
     $conexion->close();
 }
@@ -56,7 +56,7 @@ function mostrarProductosCarrito()
     //a veces llamamos a la funcion y el carrito ya no existe por ejemplo porque
     // eliminamos el ultimo producto por lo cual eliminamos la variable de sesion carrito
     if (!isset($_SESSION['carrito'])) {
-        echo "carrito vacio <br>";
+        echo '<div class="container" ><div class="row mx-auto" ><div class="col-lg-12" > carrito vacio <br></div></div></div>';
     } else {
         $total = 0;
         $prods_compra = $_SESSION['carrito'];
@@ -64,28 +64,33 @@ function mostrarProductosCarrito()
         foreach ($prods_compra as  $indice => $producto) {
             echo '
             <hr>
-            <div class="row">
-            <div class="col-lg-4"><img src="ABM/libros/' . $producto['foto'] . '" width="187.5px" heigth="375px" alt="' . $producto['nombre'] . '" ></div>
-            <div class="row">
-             <div class="col-lg-12"> ' . $producto['nombre'] . '</div>
-             <div class="col-lg-12">$' . $producto['precio'] . '</div>
-             <div class="col-lg-12">Autor: ' . $producto['autor'] . '</div>             
+            <div class="row text-center mt-5">
+             <div class="col-lg-12">
+             <div class="row">
+            <div class="col-lg-4 col-sm-12"><img src="ABM/libros/' . $producto['foto'] . '" width="187.5px" heigth="375px" alt="' . $producto['nombre'] . '" ></div>
+            <div class="row text-left">
+            <div class="col-lg-12" >
+                <div class="row" style="padding-bottom:15px;"><h3 class="font-weight-light"> ' . $producto['nombre'] .'</h3></div>
+                <div class="row" style="padding-bottom:15px;">$' . $producto['precio'] . '</div>
+                <div class="row" style="padding-bottom:15px;">Autor: ' . $producto['autor'] . '</div>             
+                <div class="row" style="padding-bottom:15px;">Cantidad: ' . $producto['cantidad'] . '</div>  </div>           
             </div>';
 
-            if ($prods_compra[$indice]['cantidad'] > 1) {
-                echo '<div class="row text-center mt-3" style="width:100%"> <div class="col-lg-4"><a href="carrito2.php?id_resta=' . $prods_compra[$indice]['id'] . '">restarCantidad |</a> ';
-                echo '<a href="carrito2.php?id_suma=' . $prods_compra[$indice]['id'] . '">sumarCantidad </a><br></div> ';
+            if (isset($prods_compra[$indice]['cantidad'])) {
+                echo '<div class="row text-center mt-3" style="width:100%"> <div class="col-lg-12 col-sm-12"><button class="m-2 btn btn-danger"><a class="text-white text-decoration-none" href="carrito2.php?id_resta=' . $prods_compra[$indice]['id'] . '">Restar cantidad </a></button> ';
+                echo '<button class="m-2 btn btn-success "><a class="text-white text-decoration-none" href="carrito2.php?id_suma=' . $prods_compra[$indice]['id'] . '">Sumar cantidad </a></button><br></div> ';
             } else {
+                
                 echo '<a href="carrito2.php?id_suma=' . $prods_compra[$indice]['id'] . '">
 	sumarCantidad </a><br> ';
             }
-            echo '<div class="col-lg-4"> Subtotal: $' . $prods_compra[$indice]['cantidad'] * $prods_compra[$indice]['precio'] . '</div>';
-            echo '<div class="col-lg-4"> <a href="carrito2.php?id_borra=' . $prods_compra[$indice]['id'] . '">
-			Eliminar producto del carrito </a>  </div> </div> <br><br>';
+            echo '<div class="col-lg-4 col-sm-12"> Subtotal: $' . $prods_compra[$indice]['cantidad'] * $prods_compra[$indice]['precio'] . '</div>';
+            echo '<div class="col-lg-4 col-sm-12"> <button class="m-2 btn btn-danger"> <a class="text-white text-decoration-none" href="carrito2.php?id_borra=' . $prods_compra[$indice]['id'] . '">
+			Eliminar del carrito </a> </button> </div> </div> </div><hr> </div> <br><br>';
             echo '<br>';
             $total = $total + ($prods_compra[$indice]['cantidad'] * $prods_compra[$indice]['precio']);
         }
-        echo 'TOTAL COMPRA $' . $total . '<br><br>';
+        echo '<div class="row" style="width:100%;"> <div class="col-lg-12 text-right"> TOTAL COMPRA $' . $total . '</div> <br><br>';
     }
 }
 function buscarSiProductoExiste($id)
@@ -147,8 +152,8 @@ function restarCantidad($id)
         if ($producto['id'] == $id) {
             $prods_compra[$indice]['cantidad']--;
         }
+        $_SESSION['carrito'] = $prods_compra;
     }
-    $_SESSION['carrito'] = $prods_compra;
 }
 
 function eliminarProdCarrito($id)

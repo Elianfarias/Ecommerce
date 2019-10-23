@@ -33,7 +33,7 @@ include("includes/logicaCarrito.php");
                 <span class="h4"> Mi Carrito </span>
             </div>
             <div class="col-lg-6 text-right" style="margin-top:150px">
-                <a href="carrito3.php" class="h5">ver carrito</a><br><br>
+                <a href="carrito2.php" class="h5">ver carrito</a><br><br>
             </div>
         </div>
 
