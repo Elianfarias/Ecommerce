@@ -57,9 +57,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST")
     // $mysqli->error
     if (isset($parametros['nombre']) && isset($parametros['cantidad']) && isset($parametros['precio']) && isset($parametros['tipo']))
     {
-        // CAMBIAR XD 
-        //$insertQuery = "INSERT INTO products (name, quantity, price, product_type_id) VALUES (";
-        //$insertQuery .= "'".$parametros['nombre']."'".','.$parametros['cantidad'].','.$parametros['precio'].','.$parametros['tipo'].')';
+        $insertQuery = "INSERT INTO ventas (name, quantity, price, product_type_id) VALUES (";
+        $insertQuery .= "'".$parametros['nombre']."'".','.$parametros['cantidad'].','.$parametros['precio'].','.$parametros['tipo'].')';
         if($mysqli->query($insertQuery) === TRUE)
         {
             $respuesta = [
