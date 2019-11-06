@@ -22,70 +22,104 @@ include_once("includes/conexion.php");
 </head>
 
 <body>
-  <?php if (isset($_SESSION['usuario'])) {
+  <?php
+  if (isset($_SESSION['usuario']) && $_SESSION['usuario']['tipoUsuario'] == 'admin') {
     ?>
-   <nav class="navbar-light" id="nav" style="position: fixed !important;z-index: 100;background-color:white;">
-   <div class="contenedor-nav">
-     <div class="logo">
-       <a href="usuario/index.php"> <img src="img/moonlight.png" alt="" /></a>
-       <!--cambiar por un icono de volver hacia atras-->
-     </div>
-     <div class="enlaces" id="contenedorBuscador" >
-       <div class="row">
-         <div class="col-lg-10 col-md-12 col-sm-12">
-           <input type="text" class="form-control" id="busqueda" placeholder="Ingrese su busqueda.." />
-         </div>
-         <div class="col-lg-2 col-md-2 col-sm-2">
-           <button class="btn btn-outline-dark my-sm-0" id="buscar" type="submit">
-             Buscar
-           </button>
-           <div></div>
-         </div>
-       </div>
-       <div class="list-group position-absolute mt-1" id="listaBusqueda"></div>
-     </div>
-     <div class="enlaces" id="enlaces">
-       <a href="carrito2.php" id="enlaces-libros" class="btn-header" style="margin-bottom: 15px"><span class="fa fa-cart-plus " style="font-size: 20px;padding-top: 5px;" ></span></a>
-        <a href="catalogo.php" id="enlaces-libros" class="btn-header" style="margin-bottom: 15px">Libros</a>
-       <a href="../includes/salir.php"  class="btn-header rounded">Cerrar sesion</a>
-     </div>
-     <div class="icono" id="open">
-       <span>&#9776;</span>
-     </div>
-   </div>
- </nav>
- <?php
-  } else {
-  ?>
-  <nav class="navbar-light" id="nav" style="position: fixed !important;z-index: 100; background-color:white">
-    <div class="contenedor-nav">
-      <div class="logo">
-        <a href="index.php"> <img src="img/moonlight.png" alt="" /></a>
-      </div>
-      <div class="enlaces" id="contenedorBuscador">
-        <div class="row">
-          <div class="col-lg-10 col-md-12 col-sm-12">
-            <input type="text" class="form-control" id="busqueda" placeholder="Ingrese su busqueda.." />
-          </div>
-          <div class="col-lg-2 col-md-2 col-sm-2">
-            <button class="btn btn-outline-dark my-sm-0" id="buscar" type="submit">
-              Buscar
-            </button>
-            <div></div>
-          </div>
+    <nav class="navbar-light" id="nav">
+      <div class="contenedor-nav">
+        <div class="logo">
+          <a href="index.php"> <img src="img/moonlight.png" alt="" /></a>
         </div>
-        <div class="list-group position-absolute mt-1" id="listaBusqueda"></div>
+        <div class="enlaces" id="contenedorBuscador">
+          <div class="row">
+            <div class="col-lg-10 col-md-12 col-sm-12">
+              <input type="text" class="form-control" id="busqueda" placeholder="Ingrese su busqueda.." />
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-2">
+              <button class="btn btn-outline-dark my-sm-0" id="buscar" type="submit">
+                Buscar
+              </button>
+              <div></div>
+            </div>
+          </div>
+          <div class="list-group position-absolute mt-1" id="listaBusqueda"></div>
+        </div>
+        <div class="enlaces" id="enlaces">
+          <a href="../carrito2.php" id="enlaces-libros" class="btn-header" style="margin-bottom: 15px"><span class="fa fa-cart-plus " style="font-size: 20px;padding-top: 5px;"></span></a>
+          <a href="../ABM/" id="enlaces-libros" class="btn-header" style="margin-bottom: 15px">ABM</a>
+          <a href="../catalogo.php" id="enlaces-libros" class="btn-header" style="margin-bottom: 15px">Libros</a>
+          <a href="../includes/salir.php" id="enlaces-sign" class="btn-header rounded">Cerrar sesion</a>
+        </div>
+        <div class="icono" id="open">
+          <span>&#9776;</span>
+        </div>
       </div>
-      <div class="enlaces" id="enlaces">
-        <a href="catalogo.php" id="enlaces-libros" class="btn-header" style="margin-bottom: 15px">Libros</a>
-        <a href="login.php" id="enlaces-login" class="btn-header">Iniciar sesion</a>
-        <a href="register.php" id="enlaces-sign" class="btn-header rounded">Crea una cuenta</a>
+    </nav>
+  <?php
+  } else if (isset($_SESSION['usuario']) && $_SESSION['usuario']['tipoUsuario'] == 'usuario') {
+    ?>
+    <nav class="navbar-light" id="nav" style="background:white;">
+      <div class="contenedor-nav">
+        <div class="logo">
+          <a href="usuario/index.php"> <img src="img/moonlight.png" alt="" /></a>
+          <!--cambiar por un icono de volver hacia atras-->
+        </div>
+        <div class="enlaces" id="contenedorBuscador">
+          <div class="row">
+            <div class="col-lg-10 col-md-12 col-sm-12">
+              <input type="text" class="form-control" id="busqueda" placeholder="Ingrese su busqueda.." />
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-2">
+              <button class="btn btn-outline-dark my-sm-0" id="buscar" type="submit">
+                Buscar
+              </button>
+              <div></div>
+            </div>
+          </div>
+          <div class="list-group position-absolute mt-1" id="listaBusqueda"></div>
+        </div>
+        <div class="enlaces" id="enlaces">
+          <a href="carrito2.php" id="enlaces-libros" class="btn-header" style="margin-bottom: 15px"><span class="fa fa-cart-plus " style="font-size: 20px;padding-top: 5px;"></span></a>
+          <a href="catalogo.php" id="enlaces-libros" class="btn-header" style="margin-bottom: 15px">Libros</a>
+          <a href="includes/salir.php" class="btn-header rounded">Cerrar sesion</a>
+        </div>
+        <div class="icono" id="open">
+          <span>&#9776;</span>
+        </div>
       </div>
-      <div class="icono" id="open">
-        <span>&#9776;</span>
+    </nav>
+  <?php
+  } else {
+    ?>
+    <nav class="navbar-light" id="nav" style="position: fixed !important;z-index: 100; background-color:white">
+      <div class="contenedor-nav">
+        <div class="logo">
+          <a href="index.php"> <img src="img/moonlight.png" alt="" /></a>
+        </div>
+        <div class="enlaces" id="contenedorBuscador">
+          <div class="row">
+            <div class="col-lg-10 col-md-12 col-sm-12">
+              <input type="text" class="form-control" id="busqueda" placeholder="Ingrese su busqueda.." />
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-2">
+              <button class="btn btn-outline-dark my-sm-0" id="buscar" type="submit">
+                Buscar
+              </button>
+              <div></div>
+            </div>
+          </div>
+          <div class="list-group position-absolute mt-1" id="listaBusqueda"></div>
+        </div>
+        <div class="enlaces" id="enlaces">
+          <a href="catalogo.php" id="enlaces-libros" class="btn-header" style="margin-bottom: 15px">Libros</a>
+          <a href="login.php" id="enlaces-login" class="btn-header">Iniciar sesion</a>
+          <a href="register.php" id="enlaces-sign" class="btn-header rounded">Crea una cuenta</a>
+        </div>
+        <div class="icono" id="open">
+          <span>&#9776;</span>
+        </div>
       </div>
-    </div>
-  </nav>
+    </nav>
   <?php
   }
   ?>

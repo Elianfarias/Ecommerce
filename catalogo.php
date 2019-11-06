@@ -22,7 +22,9 @@ include_once("includes/conexion.php");
 
 <body>
   <?php
-  if (isset($_SESSION['usuario'])) {
+    if (isset($_SESSION['usuario']) && $_SESSION['usuario']['tipoUsuario'] == 'admin' ) {
+      include("includes/headerAdmin.html");
+      } else if (isset($_SESSION['usuario']) && $_SESSION['usuario']['tipoUsuario'] == 'usuario') {
     include("includes/headerUsuario.html");
   } else {
     ?>

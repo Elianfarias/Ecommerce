@@ -32,7 +32,7 @@ $(function() {
               </div>
               <p class="font-weight-light mb-0 text-dark">${tarea.escritor}</p>
               <p class="font-weight-light mb-0">$${tarea.precio}</p>
-              <p class="mb-5"><button type="button" class="btn btn-link float-right"><a href="articulo.php?id=${tarea.id}">Ver Más</a></button></p>
+              <p class="mb-5"><button type="button" class="btn btn-link float-right"><a href="../articulo.php?id=${tarea.id}">Ver Más</a></button></p>
               
           </div>     
       </div>

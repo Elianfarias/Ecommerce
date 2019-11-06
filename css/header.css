@@ -50,6 +50,9 @@
     background-position: center;
     background-size: cover;
   }
+  #nav{
+    position: fixed !important;z-index: 100;
+  }
   /* El menú cambie segun bajamos en la pagina y ponemos una caja con sombras */
   nav {
     width: 100%;
