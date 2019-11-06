@@ -15,7 +15,7 @@
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous" />
-  <link rel="stylesheet" href="css/register.css">
+  <link rel="stylesheet" href="css/registerr.css">
   <link rel="stylesheet" href="css/login.css">
 
 </head>
@@ -53,7 +53,7 @@ if (isset($_REQUEST['insertar'])) {
     $name = $_REQUEST['name'];
     $email = $_REQUEST['email'];
     $username = $_REQUEST['username'];
-    $code = $pass;
+    $code = time().$username;
     $fecha_actual = date("d/m/Y");
     $sql = "INSERT INTO usuarios (name, username, pass, email,code,validation, fechaRegistro, ultimaConexion, tipoUsuario) VALUES ('$name', '$username', '$pass', '$email', '$code', 'No verificado', '$fecha_actual', '$fecha_actual','usuario')";
     //  $para = $email;
