@@ -1,5 +1,12 @@
-
 <?php
+session_start();
+if (isset($_SESSION['usuario'])) {
+  if ($_SESSION['usuario']['tipoUsuario'] == 'admin') {
+    header('location: admin/index.php');
+  } elseif ($_SESSION['usuario']['tipoUsuario'] == 'usuario') {
+    header('location: usuario/index.php');
+  }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -34,8 +41,11 @@
   </head>
   
 <?php
+
 include("includes/header.html");
+
 include("includes/main.html");
+
 include("includes/footer.html");
 ?>
   <script src="js/main2.js"></script>

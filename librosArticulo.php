@@ -1,4 +1,5 @@
 <?php
+
 	if (isset($_GET['id'])) {
         $id_libro=$_GET['id'];		
         $sql="SELECT * FROM libro WHERE id='$id_libro'";
@@ -77,7 +78,7 @@
                         <h3 class="card-title">$<?php echo $precio ?></h3>
                       </div>
                       <div class="col-sm-6">
-                        <a href="#" class="btn btn-primary float-right">Comprar</a>
+                        <a href="carrito2.php?id=<?php echo $id_libro;?>" class="btn btn-primary float-right">Comprar</a>
                       </div>
                     </div>
                   </div>
