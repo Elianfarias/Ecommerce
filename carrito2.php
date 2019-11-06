@@ -22,44 +22,47 @@ include("includes/logicaCarrito.php");
 <?php 
 
 if(isset($_SESSION['usuario'])){
-	?><nav class="navbar-light" id="nav" style="position: fixed !important;z-index: 100;background-color:white;">
-  <div class="contenedor-nav">
-    <div class="logo">
-      <a href="usuario/index.php"> <img src="img/moonlight.png" alt="" /></a>
-    </div>
-    <div class="enlaces" id="contenedorBuscador">
-      <div class="row">
-        <div class="col-lg-10 col-md-12 col-sm-12">
-          <input type="text" class="form-control" id="busqueda" placeholder="Ingrese su busqueda.." />
-        </div>
-        <div class="col-lg-2 col-md-2 col-sm-2">
-          <button class="btn btn-outline-dark my-sm-0" id="buscar" type="submit">
-            Buscar
-          </button>
-          <div></div>
-        </div>
-      </div>
-      <div class="list-group position-absolute mt-1" id="listaBusqueda"></div>
-    </div>
-    <div class="enlaces" id="enlaces">
-      <a href="carrito.php" id="enlaces-libros" class="btn-header" style="margin-bottom: 15px"><span class="fa fa-cart-plus " style="font-size: 20px;padding-top: 5px;" ></span></a>
-      <a href="includes/salir.php"  class="btn-header rounded">Cerrar sesion</a>
-    </div>
-    <div class="icono" id="open">
-      <span>&#9776;</span>
-    </div>
-  </div>
-</nav><?php
+	?>
+	<nav class="navbar-light" id="nav" style="position: fixed !important;z-index: 100;background-color:white;">
+  		<div class="contenedor-nav">
+    		<div class="logo">
+      			<a href="usuario/index.php"> <img src="img/moonlight.png" alt="" /></a>
+    		</div>
+    		<div class="enlaces" id="contenedorBuscador">
+    			<div class="row">
+    			    <div class="col-lg-10 col-md-12 col-sm-12">
+    				    <input type="text" class="form-control" id="busqueda" placeholder="Ingrese su busqueda.." />
+    			    </div>
+    			    <div class="col-lg-2 col-md-2 col-sm-2">
+        				<button class="btn btn-outline-dark my-sm-0" id="buscar" type="submit">
+        				    Buscar
+        				</button>
+          				<div></div>
+        			</div>
+      			</div>
+      			<div class="list-group position-absolute mt-1" id="listaBusqueda">
+				</div>
+    		</div>
+    		<div class="enlaces" id="enlaces">
+      			<a href="carrito.php" id="enlaces-libros" class="btn-header" style="margin-bottom: 15px"><span class="fa fa-cart-plus " style="font-size: 20px;padding-top: 5px;" ></span></a>
+      			<a href="includes/salir.php"  class="btn-header rounded">Cerrar sesion</a>
+    		</div>
+    		<div class="icono" id="open">
+ 		    	<span>&#9776;</span>
+    		</div>
+  		</div>
+	</nav>
+	<?php
 	if(isset($_SESSION['carrito'])){	
-        ?>
-        <div class="container">
-        <div class="row">
-            <div class="col-lg-6" style="margin-top:150px">
+    ?>
+    <div class="container">
+    	<div class="row">
+        	<div class="col-lg-6" style="margin-top:150px">
                 <span class="h4"> Mi Carrito </span>
-            </div>
-            <div class="col-lg-6 text-right" style="margin-top:150px">
-            </div>
-        </div>	
+        	</div>
+        	<div class="col-lg-6 text-right" style="margin-top:150px">
+        	</div>
+    	</div>	
         <?php 
 		if(isset($_GET['id'])){
 		$existe=buscarSiProductoExiste($_GET['id']);
@@ -73,7 +76,7 @@ if(isset($_SESSION['usuario'])){
 		mostrarProductosCarrito();		
 		}
 		echo '<div class="row text-center mx-auto" style="width:100%;padding-bottom:10px;">
-				<div class="col-lg-6"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+				<div class="col-lg-6 col-sm-6"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
 					Finalizar compra
 				  </button><br></div>
 				  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -94,8 +97,8 @@ if(isset($_SESSION['usuario'])){
 					    </div>
 					  </div>
 					</div>';
-		echo ' <div class="col-lg-6"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-		<a class="text-white text-decoration-none" href="catalogo.php">Seguir viendo productos</a>
+		echo ' <div class="col-lg-6 col-sm-6"><button type="button" class="btn btn-primary">
+		<a class="text-white text-decoration-none" href="catalogo.php">Seguir comprando</a>
 	  </button></div></div>';
 		if (isset($_GET['id_suma'])) {
 			sumarCantidad($_GET['id_suma']);
@@ -114,7 +117,6 @@ if(isset($_SESSION['usuario'])){
 						<span class="h4"> Mi Carrito </span>
 					</div>
 					<div class="col-lg-6 text-right" style="margin-top:150px">
-
 					</div>
 				</div> 
 				
@@ -123,7 +125,7 @@ if(isset($_SESSION['usuario'])){
 		
 		mostrarProductosCarrito();
 		echo '<div class="row text-center mx-auto" style="width:100%;padding-bottom:10px;">
-				<div class="col-lg-6"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+				<div class="col-lg-6 col-sm-6"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
 					Finalizar compra
 				  </button><br></div>
 				  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -140,28 +142,28 @@ if(isset($_SESSION['usuario'])){
 					      </div>
 					      <div class="modal-footer">
 					        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-					        <button type="button" class="btn btn-primary data-dismiss="modal"">Ok</button>
 					      </div>
 					    </div>
 					  </div>
 					</div>';
-		echo ' <div class="col-lg-6"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-		<a class="text-white text-decoration-none" href="catalogo.php">Seguir viendo productos</a>
+		echo ' <div class="col-lg-6 col-sm-6"><button type="button" class="btn btn-primary">
+		<a class="text-white text-decoration-none" href="catalogo.php">Seguir comprando</a>
 	  </button></div></div>';
 		}else{
-			echo '<div class="col-lg-12 h4 text-center" style="position:absolute;bottom:300px;" > Carrito vacio <br></div>';
-
+			echo '<div class="col-lg-12 h4 text-center" style="position:absolute;bottom:300px;" > Carrito vacio <br>
+				 <a class="btn btn-primary mt-4" href="catalogo.php">Ir a comprar</a></div>';
 		}
 	
 
 }else{
-	echo 'debes iniciar sesion para utilizar el carrito <a href="login.php">Iniciar Sesion</a>';
+	echo 'Debes iniciar sesión para utilizar el carrito <a href="login.php">Iniciar Sesion</a>';
 	
 }
-
  ?>
-
 </div>
+<?php 
+// include("includes/footer.html");
+?>
 <script src="js/buscador.js"></script>
 <script src="js/header.js"></script>
 </body>

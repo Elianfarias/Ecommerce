@@ -61,36 +61,59 @@ function mostrarProductosCarrito()
         $total = 0;
         $prods_compra = $_SESSION['carrito'];
 
-        foreach ($prods_compra as  $indice => $producto) {
+        foreach ($prods_compra as $indice => $producto) {
             echo '
             <hr>
             <div class="row text-center mt-5">
-             <div class="col-lg-12">
-             <div class="row">
-            <div class="col-lg-4 col-sm-12"><img src="ABM/libros/' . $producto['foto'] . '" width="187.5px" heigth="375px" alt="' . $producto['nombre'] . '" ></div>
-            <div class="row text-left">
-            <div class="col-lg-12" >
-                <div class="row" style="padding-bottom:15px;"><h3 class="font-weight-light"> ' . $producto['nombre'] .'</h3></div>
-                <div class="row" style="padding-bottom:15px;">$' . $producto['precio'] . '</div>
-                <div class="row" style="padding-bottom:15px;">Autor: ' . $producto['autor'] . '</div>             
-                <div class="row" style="padding-bottom:15px;">Cantidad: ' . $producto['cantidad'] . '</div>  </div>           
-            </div>';
+                <div class="col-lg-12">
+                    <div class="row">
+                        <div class="col-lg-3 col-sm-3"><img src="ABM/libros/' . $producto['foto'] . '" width="100px"" alt="' . $producto['nombre'] . '" ></div>
+                        <div class="col-lg-9 col-sm-9" >
+                            <div class="row">
+                                <h3 class="font-weight-light"> ' . $producto['nombre'] .'</h3>
+                            </div>
+                            <div class="row">
+                                Precio: $' . $producto['precio'] . '
+                            </div>
+                            <div class="row">
+                                Autor: ' . $producto['autor'] . '
+                            </div>
+                            <div class="row ">';             
+                        if (isset($prods_compra[$indice]['cantidad'])) {
+                            echo '<div class="col-lg-6 col-sm-6 pt-3 pl-0" style="display:inherit">
+                                    <a class="btn btn-outline-danger mr-1" href="carrito2.php?id_resta=' . $prods_compra[$indice]['id'] .'">Restar</a>
+                                    <div class="px-3" style="border: 1px solid black; border-radius:3px">
+                                        <p style="margin-top: 6px; margin-bottom: 0px;">' . $producto['cantidad'] . '</p>
+                                    </div>
+                                    <a class="btn btn-outline-success ml-1" href="carrito2.php?id_suma=' . $prods_compra[$indice]['id'] . '">Sumar</a>
+                                </div>';
+                        } else {
+                            echo '<div class="col-lg-6 col-sm-6 pt-3 pl-0" style="display:inherit">
+                                    <div class="px-3" style="border: 1px solid black; border-radius:3px">
+                                        <p style="margin-top: 6px; margin-bottom: 0px;">' . $producto['cantidad'] . '</p>
+                                    </div>
+                                    <a class="btn btn-outline-success ml-1" href="carrito2.php?id_suma=' . $prods_compra[$indice]['id'] . '">Sumar</a>
+                                </div>';
+                                }
+                    echo'       <div class="col-lg-6 col-sm-6 pt-3 text-right" style="">
+                                    <p class="pt-2 mb-0">$' . $prods_compra[$indice]['cantidad'] * $prods_compra[$indice]['precio'] .'</p>
+                                </div>
+                            </div>
+                        </div>';//cierra col-lg-9 y el de abajo cierra row
+              echo '</div>
+                    <div class="row">
+                        <div class="col-lg-12 col-sm-12 text-right" style="padding-right:0px;"> 
+                            <a class="m-2 btn btn-link ml-2" style="margin-right: 0px !important;" href="carrito2.php?id_borra=' . $prods_compra[$indice]['id'] . '">
+                                Eliminar
+                            </a>
+                        </div>
+                    </div>
+                </div> 
+        <hr></div>';
 
-            if (isset($prods_compra[$indice]['cantidad'])) {
-                echo '<div class="row text-center mt-3" style="width:100%"> <div class="col-lg-12 col-sm-12"><button class="m-2 btn btn-danger"><a class="text-white text-decoration-none" href="carrito2.php?id_resta=' . $prods_compra[$indice]['id'] . '">Restar cantidad </a></button> ';
-                echo '<button class="m-2 btn btn-success "><a class="text-white text-decoration-none" href="carrito2.php?id_suma=' . $prods_compra[$indice]['id'] . '">Sumar cantidad </a></button><br></div> ';
-            } else {
-                
-                echo '<a href="carrito2.php?id_suma=' . $prods_compra[$indice]['id'] . '">
-	sumarCantidad </a><br> ';
-            }
-            echo '<div class="col-lg-4 col-sm-12"> Subtotal: $' . $prods_compra[$indice]['cantidad'] * $prods_compra[$indice]['precio'] . '</div>';
-            echo '<div class="col-lg-4 col-sm-12"> <button class="m-2 btn btn-danger"> <a class="text-white text-decoration-none" href="carrito2.php?id_borra=' . $prods_compra[$indice]['id'] . '">
-			Eliminar del carrito </a> </button> </div> </div> </div><hr> </div> <br><br>';
-            echo '<br>';
             $total = $total + ($prods_compra[$indice]['cantidad'] * $prods_compra[$indice]['precio']);
         }
-        echo '<div class="row" style="width:100%;"> <div class="col-lg-12 text-right"> TOTAL COMPRA $' . $total . '</div> <br><br>';
+        echo '<div class="row" style="width:100%;"> <div class="col-lg-12 pr-0 text-right"> TOTAL COMPRA $' . $total . '</div> <br><br>';
     }
 }
 function buscarSiProductoExiste($id)
@@ -140,7 +163,7 @@ function sumarCantidad($id)
     $prods_compra = $_SESSION['carrito'];
     foreach ($prods_compra as $indice => $producto) {
         if ($producto['id'] == $id) {
-            $prods_compra[$indice]['cantidad']++;
+            $prods_compra[$indice]['cantidad'] += 1;
         }
     }
     $_SESSION['carrito'] = $prods_compra;
@@ -150,7 +173,7 @@ function restarCantidad($id)
     $prods_compra = $_SESSION['carrito'];
     foreach ($prods_compra as $indice => $producto) {
         if ($producto['id'] == $id) {
-            $prods_compra[$indice]['cantidad']--;
+            $prods_compra[$indice]['cantidad'] -= 1 ;
         }
         $_SESSION['carrito'] = $prods_compra;
     }
