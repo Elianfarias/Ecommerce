@@ -53,7 +53,7 @@ if (isset($_REQUEST['insertar'])) {
     $name = $_REQUEST['name'];
     $email = $_REQUEST['email'];
     $username = $_REQUEST['username'];
-    $code = $pass;
+    $code = time().$username;
     $fecha_actual = date("d/m/Y");
     $sql = "INSERT INTO usuarios (name, username, pass, email,code,validation, fechaRegistro, ultimaConexion, tipoUsuario) VALUES ('$name', '$username', '$pass', '$email', '$code', 'No verificado', '$fecha_actual', '$fecha_actual','usuario')";
     //  $para = $email;

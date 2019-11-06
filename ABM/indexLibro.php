@@ -1,7 +1,7 @@
 <?php
 	require_once("conexion.php");
 	if (isset($_GET['id_borrar'])) {
-		include("borrar.php");
+        include("borrar.php");
 	}
 	if (isset($_GET['id_modificado'])) {
   	 	echo '<script>alert("Registro modificado")</script>';

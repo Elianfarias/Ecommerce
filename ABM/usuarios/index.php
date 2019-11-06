@@ -1,10 +1,8 @@
 <?php
 	require_once("../conexion.php");
 	if (isset($_GET['id_borrar'])) {
-		include("../borrar.php");
-	}
-	if (isset($_GET['id_modificado'])) {
-  	 	echo '<script>alert("Registro modificado")</script>';
+        include("borrar.php");
+        header('Location: index.php');
 	}
 ?>
 <html lang="en">
