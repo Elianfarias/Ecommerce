@@ -35,7 +35,7 @@
 			 <div class="col-lg-4 col-md-4 col-sm-4 d-inline my-auto text-right">
 				<a href="editar.php?id_editar=<?php echo $registro['id'];?>">
 				<button class="btn btn-warning text-white ">Modificar <i class="fas fa-pencil-alt"></i></button></a>
-				<a href="index.php?id_borrar=<?php echo $registro['id'];?>" onclick="return confirm('¿Realmente desea borrar el libro?')">
+				<a href="indexLibro.php?id_borrar=<?php echo $registro['id'];?>" onclick="return confirm('¿Realmente desea borrar el libro?')">
 				<button class="btn btn-danger text-white">Eliminar <i class="far fa-trash-alt"></i></button></a>
 			</div>
 		</div>

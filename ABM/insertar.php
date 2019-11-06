@@ -1,4 +1,4 @@
-<form action="index.php" method="post" enctype="multipart/form-data">
+<form action="indexLibro.php" method="post" enctype="multipart/form-data">
 	<div class="col-lg-12">
 		<div class="img-insert">
 			<img src="estandar.jpg" width="150px" height="250px">

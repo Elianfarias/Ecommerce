@@ -63,7 +63,7 @@ $registro=mysqli_fetch_assoc($consulta);
 				WHERE id='$id_editar'";
 		}
 
-		$editar=mysqli_query($conexion, $sql)? header("location:index.php?id_modificado=$id_editar") : print('<script>alert("Error al modificar el registro. ")</script>');
+		$editar=mysqli_query($conexion, $sql)? header("location:indexLibro.php?id_modificado=$id_editar") : print('<script>alert("Error al modificar el registro. ")</script>');
 	}
 
 
@@ -73,7 +73,7 @@ $registro=mysqli_fetch_assoc($consulta);
 		<div class="col-lg-12 mx-auto my-auto">
 			<div class="row">
 				<div class="col-lg-1 col-sm-1 mx-auto my-auto">
-					<a href="index.php"><i class="fas fa-arrow-circle-left" style="font-size: 40px;"></i></a>
+					<a href="indexLibro.php"><i class="fas fa-arrow-circle-left" style="font-size: 40px;"></i></a>
 				</div>
 				<div class="col-lg-11 col-sm-11 my-auto ">
 					<h1 class="titulo">Editar libro: <?php echo $registro['nombre']?></h1>
