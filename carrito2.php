@@ -53,7 +53,16 @@ if(isset($_SESSION['usuario'])){
   		</div>
 	</nav>
 	<?php
-	if(isset($_SESSION['carrito'])){	
+	if(isset($_SESSION['carrito'])){
+		if (isset($_GET['id_suma'])) {
+			sumarCantidad($_GET['id_suma']);
+		}
+		if (isset($_GET['id_resta'])) {
+			restarCantidad($_GET['id_resta']);
+		}
+		if (isset($_GET['id_borra'])) {
+			eliminarProdCarrito($_GET['id_borra']);
+		}	
     ?>
     <div class="container">
     	<div class="row">
@@ -76,9 +85,9 @@ if(isset($_SESSION['usuario'])){
 		mostrarProductosCarrito();		
 		}
 		echo '<div class="row text-center mx-auto" style="width:100%;padding-bottom:10px;">
-				<div class="col-lg-6 col-sm-6"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+				<div class="col-lg-6 col-sm-6"><a href="carrito2.php?finalizar_compra=1" class="btn btn-primary">
 					Finalizar compra
-				  </button><br></div>
+				  </a><br></div>
 				  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 					  <div class="modal-dialog" role="document">
 					    <div class="modal-content">
@@ -100,16 +109,9 @@ if(isset($_SESSION['usuario'])){
 		echo ' <div class="col-lg-6 col-sm-6"><button type="button" class="btn btn-primary">
 		<a class="text-white text-decoration-none" href="catalogo.php">Seguir comprando</a>
 	  </button></div></div>';
-		if (isset($_GET['id_suma'])) {
-			sumarCantidad($_GET['id_suma']);
-		}
-		if (isset($_GET['id_resta'])) {
-			restarCantidad($_GET['id_resta']);
-		}
-		if (isset($_GET['id_borra'])) {
-			eliminarProdCarrito($_GET['id_borra']);
-		}
-		
+		if (isset($_GET['finalizar_compra'])) {
+			comprar();
+		}	
 	}elseif(isset($_GET['id'])){
 		?> <div class="container">
 				<div class="row">

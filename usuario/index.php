@@ -2,6 +2,7 @@
 session_start();
 if(isset($_SESSION['usuario'])){
   if($_SESSION['usuario']['tipoUsuario'] != "usuario"){
+    $_SESSION['usuario']['validation'] = $_SESSION['nuevo']['validation'];
     header("location: ../admin/");
   }
 }

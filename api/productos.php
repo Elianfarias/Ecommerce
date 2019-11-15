@@ -55,10 +55,10 @@ if ($_SERVER['REQUEST_METHOD'] == "POST")
     
     // validar el texto que llega para prevenir inyecciones de sql
     // $mysqli->error
-    if (isset($parametros['nombre']) && isset($parametros['cantidad']) && isset($parametros['precio']) && isset($parametros['tipo']))
+    if (isset($parametros['nombre']) && isset($parametros['cantidad']) && isset($parametros['precio']) && isset($parametros['id_libro']))
     {
-        $insertQuery = "INSERT INTO ventas (name, quantity, price, product_type_id) VALUES (";
-        $insertQuery .= "'".$parametros['nombre']."'".','.$parametros['cantidad'].','.$parametros['precio'].','.$parametros['tipo'].')';
+        $insertQuery = "INSERT INTO ventas (nombre, cantidad, precio, id_libro) VALUES (";
+        $insertQuery .= "'".$parametros['nombre']."'".','.$parametros['cantidad'].','.$parametros['precio'].','.$parametros['id_libro'].')';
         if($mysqli->query($insertQuery) === TRUE)
         {
             $respuesta = [
@@ -76,7 +76,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST")
     } else {
         $respuesta = [
             "status"=>200,
-            "response" => 'nok, verificar formulario'
+            "response" => 'nok, verificar formulario',
+            "contenido" => $parametros
         ];
         echo json_encode($respuesta);
     }

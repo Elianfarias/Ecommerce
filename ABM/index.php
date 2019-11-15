@@ -28,10 +28,10 @@
                 <div class="col-sm-12"> <a href="usuarios/index.php" class="list-group-item list-group-item-action">ABM de Usuarios</a> </div>
             </div>
             <div class="row">
-                <div class="col-sm-12"><a href="indexLibro.php" class="list-group-item list-group-item-action">ABM de Ventas</a> </div>
+                <div class="col-sm-12"><a href="indexLibro.php" class="list-group-item list-group-item-action">ABM de Productos</a> </div>
             </div>
             <div class="row">
-                <div class="col-sm-12"> <a href="#" class="list-group-item list-group-item-action">ABM de Productos</a> </div>
+                <div class="col-sm-12"> <a href="ventas/index.php" class="list-group-item list-group-item-action">ABM de Ventas</a> </div>
             </div>
             <div id="formFooter" class="mt-3">
                 <a class="underlineHover" href="../index.php">Volver</a>

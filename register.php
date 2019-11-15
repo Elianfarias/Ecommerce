@@ -66,7 +66,7 @@ if (isset($_REQUEST['insertar'])) {
     //   $headers .= 'From: moonlight@gmail.com' . "\r\n" .
     //          'Reply-to: '.$email. "\r\n";
     //   mail($para, $tema, $mensaje, $headers);
-    $insertar = mysqli_query($conexion, $sql) ? print('<script>alert("Registro Exitoso")</script>') : print('<script>alert("ERROR")</script>');
+    $insertar = mysqli_query($conexion, $sql) ? print('<script>alert("Registro Exitoso. Verifique su cuenta para poder navegar por moonlight ")</script>') : print('<script>alert("ERROR")</script>');
     header("location:index.php");
   } else {
     print('<script>alert("Error al registrase.")</script>');

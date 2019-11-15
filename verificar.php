@@ -1,12 +1,16 @@
 <?php
 include("includes/conexion.php");
+session_start();
 $cod = $_REQUEST['cod'];
 $sql = "SELECT * FROM usuarios WHERE code='$cod'";
 $consulta = mysqli_query($conexion, $sql);
 $row = mysqli_fetch_assoc($consulta);
 if ($cod == $row['code']) {
     $update = "UPDATE usuarios SET validation='verificado' WHERE code='" . $cod . "'";
-    $update_sq = mysqli_query($conexion, $update); ?>
+
+    $_SESSION['nuevo'] = $row;
+    $update_sq = mysqli_query($conexion, $update);
+    ?>
 
 
     <!DOCTYPE html>
@@ -35,12 +39,6 @@ if ($cod == $row['code']) {
     </html>
 
 
-
-
-
-<?php
-}
-?>
 
 
 

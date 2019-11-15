@@ -37,13 +37,7 @@ if (isset($_GET['id_modificado'])) {
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu1" style="padding-left:20px">
                     <li>
-                        <a href="index.php?usuario=todos">Todos</a>
-                    </li>
-                    <li>
-                        <a href="index.php?usuario=verificado">Verificados</a>
-                    </li>
-                    <li>
-                        <a href="index.php?usuario=No verificado">No verificados</a>
+                        <a href="index.php?venta=todos">Todos</a>
                     </li>
                 </ul>
             </div>
@@ -62,7 +56,7 @@ if (isset($_GET['id_modificado'])) {
             <div class=" libros-todos col-lg-11 col-sm-11 col-md-11 mx-auto mt-5 rounded">
                 <?php
                 include('filtros.php');
-                include('usuarios.php');
+                include('ventas.php');
                 ?>
             </div>
         </div>
