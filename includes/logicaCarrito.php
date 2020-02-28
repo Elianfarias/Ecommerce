@@ -47,7 +47,7 @@ function agregarPrimerProducto($id)
     );
     //CREAMOS LA VARIABLE DE SESSION $_SESSION['carrito']
     $_SESSION['carrito'] = $prods_compra;
-    
+
     $resultado->free();
     $conexion->close();
 }
@@ -60,37 +60,59 @@ function mostrarProductosCarrito()
     } else {
         $total = 0;
         $prods_compra = $_SESSION['carrito'];
-
-        foreach ($prods_compra as  $indice => $producto) {
+        foreach ($prods_compra as $indice => $producto) {
             echo '
             <hr>
             <div class="row text-center mt-5">
-             <div class="col-lg-12">
-             <div class="row">
-            <div class="col-lg-4 col-sm-12"><img src="ABM/libros/' . $producto['foto'] . '" width="187.5px" heigth="375px" alt="' . $producto['nombre'] . '" ></div>
-            <div class="row text-left">
-            <div class="col-lg-12" >
-                <div class="row" style="padding-bottom:15px;"><h3 class="font-weight-light"> ' . $producto['nombre'] .'</h3></div>
-                <div class="row" style="padding-bottom:15px;">$' . $producto['precio'] . '</div>
-                <div class="row" style="padding-bottom:15px;">Autor: ' . $producto['autor'] . '</div>             
-                <div class="row" style="padding-bottom:15px;">Cantidad: ' . $producto['cantidad'] . '</div>  </div>           
-            </div>';
-
-            if (isset($prods_compra[$indice]['cantidad'])) {
-                echo '<div class="row text-center mt-3" style="width:100%"> <div class="col-lg-12 col-sm-12"><button class="m-2 btn btn-danger"><a class="text-white text-decoration-none" href="carrito2.php?id_resta=' . $prods_compra[$indice]['id'] . '">Restar cantidad </a></button> ';
-                echo '<button class="m-2 btn btn-success "><a class="text-white text-decoration-none" href="carrito2.php?id_suma=' . $prods_compra[$indice]['id'] . '">Sumar cantidad </a></button><br></div> ';
+                <div class="col-lg-12">
+                    <div class="row">
+                        <div class="col-lg-3 col-sm-3"><img src="ABM/libros/' . $producto['foto'] . '" width="100px"" alt="' . $producto['nombre'] . '" ></div>
+                        <div class="col-lg-9 col-sm-9" >
+                            <div class="row">
+                                <h3 class="font-weight-light"> ' . $producto['nombre'] . '</h3>
+                            </div>
+                            <div class="row">
+                                Precio: $' . $producto['precio'] . '
+                            </div>
+                            <div class="row">
+                                Autor: ' . $producto['autor'] . '
+                            </div>
+                            <div class="row ">';
+            if ($prods_compra[$indice]['cantidad'] > 0) {
+                echo '<div class="col-lg-6 col-sm-6 pt-3 pl-0" style="display:inherit">
+                                    <a class="btn btn-outline-danger mr-1" href="carrito2.php?id_resta=' . $prods_compra[$indice]['id'] . '">Restar</a>
+                                    <div class="px-3" style="border: 1px solid black; border-radius:3px">
+                                        <p style="margin-top: 6px; margin-bottom: 0px;">' . $_SESSION['carrito'][$indice]['cantidad'] . '</p>
+                                    </div>
+                                    <a class="btn btn-outline-success ml-1" href="carrito2.php?id_suma=' . $prods_compra[$indice]['id'] . '">Sumar</a>
+                                </div>';
             } else {
-                
-                echo '<a href="carrito2.php?id_suma=' . $prods_compra[$indice]['id'] . '">
-	sumarCantidad </a><br> ';
+                echo '<div class="col-lg-6 col-sm-6 pt-3 pl-0" style="display:inherit">
+                                    <div class="px-3" style="border: 1px solid black; border-radius:3px">
+                                        <p style="margin-top: 6px; margin-bottom: 0px;">' . $_SESSION['carrito'][$indice]['cantidad'] . '</p>
+                                    </div>
+                                    <a class="btn btn-outline-success ml-1" href="carrito2.php?id_suma=' . $prods_compra[$indice]['id'] . '">Sumar</a>
+                                </div>';
             }
-            echo '<div class="col-lg-4 col-sm-12"> Subtotal: $' . $prods_compra[$indice]['cantidad'] * $prods_compra[$indice]['precio'] . '</div>';
-            echo '<div class="col-lg-4 col-sm-12"> <button class="m-2 btn btn-danger"> <a class="text-white text-decoration-none" href="carrito2.php?id_borra=' . $prods_compra[$indice]['id'] . '">
-			Eliminar del carrito </a> </button> </div> </div> </div><hr> </div> <br><br>';
-            echo '<br>';
+            echo '       <div class="col-lg-6 col-sm-6 pt-3 text-right" style="">
+                                    <p class="pt-2 mb-0">$' . $prods_compra[$indice]['cantidad'] * $prods_compra[$indice]['precio'] . '</p>
+                                </div>
+                            </div>
+                        </div>'; //cierra col-lg-9 y el de abajo cierra row
+            echo '</div>
+                    <div class="row">
+                        <div class="col-lg-12 col-sm-12 text-right" style="padding-right:0px;"> 
+                            <a class="m-2 btn btn-link ml-2" style="margin-right: 0px !important;" href="carrito2.php?id_borra=' . $prods_compra[$indice]['id'] . '">
+                                Eliminar
+                            </a>
+                        </div>
+                    </div>
+                </div> 
+        <hr></div>';
+
             $total = $total + ($prods_compra[$indice]['cantidad'] * $prods_compra[$indice]['precio']);
         }
-        echo '<div class="row" style="width:100%;"> <div class="col-lg-12 text-right"> TOTAL COMPRA $' . $total . '</div> <br><br>';
+        echo '<div class="row" style="width:100%;"> <div class="col-lg-12 pr-0 text-right"> TOTAL COMPRA $' . $total . '</div> <br><br>';
     }
 }
 function buscarSiProductoExiste($id)
@@ -104,6 +126,7 @@ function buscarSiProductoExiste($id)
         }
     }
     $_SESSION['carrito'] = $prods_compra;
+
     return $existe;
 }
 function agregarNuevoProducto($id)
@@ -140,17 +163,16 @@ function sumarCantidad($id)
     $prods_compra = $_SESSION['carrito'];
     foreach ($prods_compra as $indice => $producto) {
         if ($producto['id'] == $id) {
-            $prods_compra[$indice]['cantidad']++;
+            $_SESSION['carrito'][$indice]['cantidad'] += 1;
         }
     }
-    $_SESSION['carrito'] = $prods_compra;
 }
 function restarCantidad($id)
 {
     $prods_compra = $_SESSION['carrito'];
     foreach ($prods_compra as $indice => $producto) {
         if ($producto['id'] == $id) {
-            $prods_compra[$indice]['cantidad']--;
+            $prods_compra[$indice]['cantidad'] -= 1;
         }
         $_SESSION['carrito'] = $prods_compra;
     }
@@ -193,32 +215,47 @@ function comprar()
 {
 
     include("conexion.php");
-    $fecha = date("Y-m-d");
-    $usuario = $_SESSION['id_usuario'];
-    echo $fecha . '<br>';
-    $sql = "INSERT INTO ventas (fecha, id_usuario) VALUES ('$fecha','$usuario')";
-    $insert = $conexion->query($sql);
 
 
-    $sqlc = "SELECT id_venta FROM ventas ORDER BY id_venta desc LIMIT 1,1";
-    $consulta = $conexion->query($sqlc);
-    $registro = $consulta->fetch_array();
-    echo $registro[0];
-    $id_venta = $registro[0];
-
+    $idUsuario = $_SESSION['usuario']['id'];
     $prods_compra = $_SESSION['carrito'];
     $total = 0;
+    $fecha = date('d-m-Y');
+    $sql = "INSERT INTO ventas (total,fecha,id_usuario) VALUES (0,'$fecha','$idUsuario')";
+    $conexion->query($sql);
+
+
+    $sqlc = "SELECT id_venta FROM ventas ORDER BY id_venta desc LIMIT 1";
+    $consultac = $conexion->query($sqlc);
+    $registroc = $consultac->fetch_array();
+    $id_venta = $registroc[0];
+
     foreach ($prods_compra as $indice => $producto) {
+
         $id = $producto['id'];
         $precio = $producto['precio'];
         $cantidad = $producto['cantidad'];
+        $sqll = "SELECT stock FROM libro WHERE id = $id";
+        $consul = mysqli_query($conexion, $sqll);
+        if (mysqli_num_rows($consul) > 0) {
+            $res = mysqli_fetch_assoc($consul);
+            $stockFinal = $res['stock'] - $cantidad;
 
-        $sqli = "INSERT INTO prodxventas (id_venta, id, precio_u, cant) VALUES ('$registro[0]','$id','$precio','$cantidad')";
-        $insertar = $conexion->query($sqli) ? print("ok") : print("Ups, :(");
+            $sql = "UPDATE libro SET stock='$stockFinal' WHERE id='$id'";
+            $conexion->query($sql);
+        }
 
-        $total = $total + ($prods_compra[$indice]['precio'] * $prods_compra[$indice]['cantidad']);
+        $sqli = "INSERT INTO prodxventa (id_venta, id_libro, precio, cantidad) VALUES ('$id_venta','$id','$precio','$cantidad')";
+        $conexion->query($sqli);
     }
 
-    $sql = "UPDATE ventas SET total='$total'";
-    $actualizar = $conexion->query($sql) ? print("ok") : print("Ups, :(");
+    $total = $total + ($prods_compra[$indice]['precio'] * $prods_compra[$indice]['cantidad']);
+    $sql = "UPDATE ventas SET total='$total' WHERE id_venta='$id_venta'";
+    $actualizar = $conexion->query($sql);
+    if ($actualizar) {
+        echo "<script>alert('compra finalizada');</script>";
+    }
+    else{
+        print("<script> alert('Ha ocurrido un error') </script>");
+    }
 }

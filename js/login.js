@@ -6,6 +6,7 @@ $("#formLogin").submit(function (event) {
         datatype:"json",
         data: $(this).serialize(),
         success: function (res) {
+            console.log(res)
             var respuesta = JSON.parse(res);
             if(!respuesta.error){
                 if(respuesta.tipo == 'admin'){

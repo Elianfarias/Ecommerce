@@ -1,0 +1,75 @@
+:root {
+	--color: rgba(235, 148, 18, 0.6);
+	--color2: rgba(29, 241, 82, 0.6);
+	--color3: rgba(28, 186, 248, 0.45);
+  }
+details{
+	padding: 1px 20px;
+	background-color: GAINSBORO;
+	margin-bottom: 10px;
+}
+
+details[open]{
+	background: linear-gradient(
+ to bottom,
+ var(--color),
+ var(--color2),
+ var(--color3)
+ );
+	color: black;
+}
+
+summary{
+	cursor: pointer;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	padding: 0.2%;
+    outline: none;
+    font-size: 25px;
+}
+
+summary::-webkit-details-marker{
+	display: none;
+}
+
+summary img{
+	width: 100%;
+	max-width: 70px;
+	min-width: 40px;
+	margin-right: 10px;
+}
+
+.insertar{
+	padding-left: 1%;
+}
+
+.titulo{
+    text-align: center;
+	margin: 30px;
+}
+
+.icons {
+	margin-left:92%;
+	display: inline;
+}
+.btn-back-editar {
+	text-decoration: none;
+	padding: 1px 8px 6px;
+	border-radius: 50%;
+	background-color: #E3E3E3; 
+	font-size: 25px;
+	color:black;
+}
+
+.inp-insert input{
+	padding: 50%;
+}
+
+.img-insert img{
+	margin-left: 33%;
+}
+
+.inp-desc input{
+	height: 50px;
+}

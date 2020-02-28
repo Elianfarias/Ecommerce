@@ -53,7 +53,7 @@ if (isset($_SESSION['usuario'])) {
         <div class="list-group position-absolute mt-1" id="listaBusqueda"></div>
       </div>
       <div class="enlaces" id="enlaces">
-      <a href="../carrito2.php" id="enlaces-libros" class="btn-header" style="margin-bottom: 15px"><span class="fa fa-cart-plus " style="font-size: 20px;padding-top: 5px;" ></span></a>
+        <a href="../carrito2.php" id="enlaces-libros" class="btn-header" style="margin-bottom: 15px;"><span class="fa fa-cart-plus " style="font-size: 25px;padding-top: 5px;" ></span></a>
         <a href="../ABM/" id="enlaces-libros" class="btn-header" style="margin-bottom: 15px">ABM</a>
         <a href="../catalogo.php" id="enlaces-libros" class="btn-header" style="margin-bottom: 15px">Libros</a>
         <a href="../includes/salir.php" id="enlaces-sign" class="btn-header rounded">Cerrar sesion</a>

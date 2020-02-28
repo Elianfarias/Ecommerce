@@ -22,7 +22,7 @@ $(function () {
                 if(search != ''){
                 var tareas = JSON.parse(respuesta);
                 tareas.forEach(tarea => {
-                $("#listaBusqueda").append( `<a href="articulo.php?id=${tarea.id}" class="list-group-item list-group-item-action busquedaActiva" >${tarea.nombre}</a>`);
+                $("#listaBusqueda").append( `<a href="../articulo.php?id=${tarea.id}" class="list-group-item list-group-item-action busquedaActiva" >${tarea.nombre}</a>`);
                 $("#listaBusqueda").show(1000);
                 });
                 

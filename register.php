@@ -15,8 +15,8 @@
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous" />
-  <link rel="stylesheet" href="css/register.css">
-  <link rel="stylesheet" href="css/login.css">
+  <link rel="stylesheet" href="css/registerr.css">
+  <link rel="stylesheet" href="css/loginn.css">
 
 </head>
 
@@ -53,20 +53,20 @@ if (isset($_REQUEST['insertar'])) {
     $name = $_REQUEST['name'];
     $email = $_REQUEST['email'];
     $username = $_REQUEST['username'];
-    $code = $pass;
+    $code = time().$username;
     $fecha_actual = date("d/m/Y");
     $sql = "INSERT INTO usuarios (name, username, pass, email,code,validation, fechaRegistro, ultimaConexion, tipoUsuario) VALUES ('$name', '$username', '$pass', '$email', '$code', 'No verificado', '$fecha_actual', '$fecha_actual','usuario')";
-    //  $para = $email;
-    //   $tema = 'Confirmación de email';
-    //   $mensaje = 'Se ha registrado a'."<a href='http://localhost/Ecommerce/Moonlight/' style='text-decoration:none;color:red;'> Mercado Moonlight </a> con el usuario ".$name."\r\n\n".
-    //   'Por favor valide su registro haciendo click en'.
-    //   "<a href='https://localhost/Ecommerce/Moonlight/verificar.php?cod=".$code."'style='text-decoration:none;'> este enlace</a>";
-    //   $headers = "MIME-Version: 1.0\r\n";
-    //   $headers .= "Content-type: text/html; charset=iso-8859-1\r\n";
-    //   $headers .= 'From: moonlight@gmail.com' . "\r\n" .
-    //          'Reply-to: '.$email. "\r\n";
-    //   mail($para, $tema, $mensaje, $headers);
-    $insertar = mysqli_query($conexion, $sql) ? print('<script>alert("Registro Exitoso")</script>') : print('<script>alert("ERROR")</script>');
+     $para = $email;
+      $tema = 'Confirmación de email';
+      $mensaje = 'Se ha registrado a'."<a href='http://localhost/Ecommerce/Moonlight/' style='text-decoration:none;color:red;'> Mercado Moonlight </a> con el usuario ".$name."\r\n\n".
+      'Por favor valide su registro haciendo click en'.
+      "<a href='http://e-moonlight.000webhostapp.com/verificar.php?cod=".$code."'style='text-decoration:none;'> este enlace</a>";
+      $headers = "MIME-Version: 1.0\r\n";
+      $headers .= "Content-type: text/html; charset=iso-8859-1\r\n";
+      $headers .= 'From: moonlight@gmail.com' . "\r\n" .
+             'Reply-to: '.$email. "\r\n";
+      mail($para, $tema, $mensaje, $headers);
+    $insertar = mysqli_query($conexion, $sql) ? print('<script>alert("Registro Exitoso. Verifique su cuenta para poder navegar por Moonlight")</script>') : print('<script>alert("ERROR")</script>');
     header("location:index.php");
   } else {
     print('<script>alert("Error al registrase.")</script>');

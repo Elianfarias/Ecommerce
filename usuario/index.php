@@ -1,13 +1,23 @@
 <?php
+include('../includes/conexion.php');
 session_start();
 if(isset($_SESSION['usuario'])){
+    $idUsuario = $_SESSION['usuario']['username'];
+    $sql = "SELECT * FROM usuarios WHERE username='$idUsuario'";
+    $consulta = mysqli_query($conexion, $sql);
+    $row = mysqli_fetch_assoc($consulta);
+    $_SESSION['validacion'] = $row;
+    $_SESSION['usuario']['validation'] = $_SESSION['validacion']['validation'];
   if($_SESSION['usuario']['tipoUsuario'] != "usuario"){
     header("location: ../admin/");
   }
+  
 }
 else{
   header("location: ../login.php");
 }
+
+if($_SESSION['usuario']['validation'] == 'verificado'){
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -66,7 +76,7 @@ else{
         <div class="list-group position-absolute mt-1" id="listaBusqueda"></div>
       </div>
       <div class="enlaces" id="enlaces">
-        <a href="../carrito2.php"  class="btn-header" style="margin-bottom: 15px"><span class="fa fa-cart-plus " style="font-size: 20px;padding-top: 5px;" ></span></a>
+        <a href="../carrito2.php"  class="btn-header" style="margin-bottom: 15px"><span class="fa fa-cart-plus " style="font-size: 25px;padding-top: 5px;" ></span></a>
         <a href="../catalogo.php" id="enlaces-libros" class="btn-header" style="margin-bottom: 15px"
         >Libros</a
         >
@@ -90,6 +100,27 @@ else{
 include("../includes/main.html");
 
 include("../includes/footer.html");
+}
+else{
+  ?>
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Moonlight</title>
+  <link rel="stylesheet" href="../css/error.css" />
+  </head>
+  <body>
+  <div class="error">
+    <span>Porfavor verifique su cuenta.</span>
+  </div>
+  </body>
+  </html>
+
+<?php
+}
 ?>
 <script src="main.js"></script>
 <script src="../js/headerrr.js"></script>
